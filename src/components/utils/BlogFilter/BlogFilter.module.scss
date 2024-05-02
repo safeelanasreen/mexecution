@@ -1,0 +1,146 @@
+@import "../../../styles/util";
+
+
+
+.filter_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    @include min(992) {
+        margin-bottom: 66px;
+    }
+
+    .filter_search {
+        max-width: 320px;
+        width: 100%;
+        display: none;
+
+        @include min(992) {
+            display: block;
+        }
+
+        @include min(1600) {
+            max-width: 400px;
+        }
+    }
+
+    :global {
+        .form-control {
+            border-radius: 10rem;
+            padding: 10px 30px;
+            background-image: url(/images/icon_search.svg);
+            background-repeat: no-repeat;
+            background-position: 95% center;
+            background-size: 20px 20px;
+
+            &::placeholder {
+                font-size: size(16);
+            }
+        }
+    }
+
+    &.button_2 {
+        .nav_wrap {
+
+            width: 100%;
+            padding: 0 5px;
+
+            @include min(992) {
+                width: auto;
+            }
+
+            :global {
+                .nav-pills {
+                    // justify-content: space-between;
+                }
+
+                .nav-link {
+                    padding: 7px 21.3px;
+
+                    @include min(992) {
+                        padding: 12px 35.3px;
+                    }
+                }
+
+                .nav-item {
+                    @include min(992) {
+                        padding-left: size(10);
+                        padding-right: size(10);
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+
+
+
+.nav_wrap {
+
+    :global {
+        .row {
+            @extend %noscroll;
+            --bs-gutter-x: 8px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+            @include min(992) {
+                --bs-gutter-x: 1.25rem;
+
+            }
+        }
+
+        .nav-pills {
+            --bs-nav-pills-link-active-bg:#{$secondary};
+
+            --bs-nav-pills-link-active-color: #000;
+
+        }
+
+        .nav-item {
+            flex: 0 0 auto;
+            width: auto;
+        }
+
+        .nav-link {
+            --bs-nav-pills-border-radius: 10rem;
+            background-color: transparent;
+            border: 1px solid #ccc;
+            font-weight: 500;
+            font-size: 16px;
+            color: #000;
+            padding: size(10.667) size(32);
+
+            // --bs-nav-link-padding-y: .size(10.667);
+            // --bs-nav-link-padding-x: size(32);
+            &:focus{
+                outline: 0;
+            }
+
+            &.active {
+                border-color: $secondary;
+                
+            }
+        }
+    }
+}
+
+.slider_wrap {
+    margin-bottom: 30px;
+
+    :global {
+        .nav-arrow {
+            --spacing: -48px;
+            z-index: 1;
+
+            &.swiper-button-disabled {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+}

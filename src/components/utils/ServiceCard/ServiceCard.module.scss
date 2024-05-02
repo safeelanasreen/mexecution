@@ -1,0 +1,130 @@
+@import "../../../styles/util";
+
+.service_card {
+    position: relative;
+    background-color: #fff;
+    height: 100%;
+    transition: 0.2s transform cubic-bezier(.32, .94, .6, 1);
+    transform: initial;
+    will-change: transform;
+    overflow: hidden;
+    padding: 20px 16.8px 20px 18px;
+    border-radius: 0;
+
+    @include max(991.98) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include min(992) {
+        border-radius: size(15);
+
+        padding: size(20);
+        border: none;
+
+    }
+
+
+    &:hover {
+        @include lg {
+            transform: scale(1.02);
+        }
+
+    }
+
+    @include min(992) {
+        padding: size(32);
+    }
+
+    &_icon {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        margin-bottom: 23px;
+
+        .icon {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include min(992) {
+            width: 53px;
+            height: 50px;
+            margin-bottom: size(30);
+        }
+
+        img {
+            object-fit: contain;
+            object-position: left;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &_info {
+        @include max(991.98) {
+            flex: 1 0;
+            display: flex;
+            align-items: flex-end
+        }
+
+        h4 {
+            @include lineHeight(20, 26);
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 0;
+            color: #000;
+
+            @include min (992) {
+                margin-bottom: 10px;
+                font-size: size(20);
+            }
+        }
+
+        p {
+            @include lineHeight(16, 27);
+            font-size: 16px;
+            color: $text-dark;
+            margin-bottom: 0;
+            display: none;
+
+            @include min(992) {
+                font-size: size(16);
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        @include lg {
+            .arrow {
+                &:global {
+                    &>span>span {
+                        animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.arrow {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    display: inline-flex;
+    overflow: hidden;
+
+    @include min(992) {
+        right: 30px;
+        top: 30px;
+    }
+
+    span {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+    }
+
+    // &>span>span {}
+}

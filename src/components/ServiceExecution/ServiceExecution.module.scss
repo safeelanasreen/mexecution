@@ -1,0 +1,64 @@
+@import "../../styles/util";
+
+.mx_service_execution {
+    background: #F7F7F7;
+    padding: 50px 0;
+
+    @include min(992) {
+        padding: size(100) 0 size(94);
+    }
+
+    .execution_wrap {
+        max-width: 890px;
+        :global {
+            .h4 {
+                @include lineHeight(30, 46);
+                margin-bottom: 23px;
+                color: $primary;
+                max-width: 250px;
+
+                @include min(576) {
+                    max-width: 100%
+                }
+
+                @include min(992) {
+                    @include lineHeight(24, 36);
+                    margin-bottom: size(18);
+                    color: #000;
+
+                    span {
+                        display: none;
+                    }
+                }
+
+                @include min(1200) {
+                    font-size: size(30);
+                }
+            }
+
+            p {
+                display: none;
+
+                @include min(992) {
+                    display: block;
+                    font-size: size(18);
+                    margin-bottom: size(50);
+
+                }
+            }
+        }
+    }
+
+    .execution_card_wrapper {
+        :global {
+            .row {
+                --bs-gutter-y: 45px;
+                --bs-gutter-x: 37px;
+
+                @include min(992) {
+                    --bs-gutter-x: 37px;
+                }
+            }
+        }
+    }
+}

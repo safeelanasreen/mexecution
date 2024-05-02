@@ -1,0 +1,78 @@
+@import "../../styles/util";
+
+.mx_location_others {
+    background-color: #F5F5F5;
+    padding: 50px 0 65px 0;
+
+    :global {
+        .swiper {
+            overflow: initial;
+
+            @include min(768) {
+                overflow: hidden;
+                position: static;
+            }
+        }
+
+        .swiper-pagination {
+            bottom: -35px;
+
+            @include lg {
+                display: none;
+            }
+
+            &-bullet {
+                transition: .3s ease;
+                &-active {
+                    width: 23px;
+                    height: 8px;
+                    border-radius: 4px;
+                    background-color: #296462;
+                }
+            }
+        }
+    }
+
+    @include min(992) {
+        padding: size(88) 0 size(86);
+    }
+
+    .head_wrap {
+        margin-bottom: 17px;
+
+        @include min(992) {
+            margin-bottom: size(50);
+        }
+
+        h2 {
+            color: $primary;
+            margin-bottom: 12px;
+            color: #007864;
+
+            @include min(992) {
+                color: #1C4140;
+            }
+        }
+
+        p {
+            color: #292929;
+        }
+    }
+}
+
+.myBullet {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+/* Style for the active pagination bullet */
+.myBulletActive {
+    opacity: 1;
+    background-color: #333;
+}

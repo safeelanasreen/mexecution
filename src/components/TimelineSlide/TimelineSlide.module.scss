@@ -1,0 +1,208 @@
+@import "../../styles/util";
+
+.history {
+    position: relative;
+
+    .content_swiper {
+        // overflow: initial;
+
+        @include min(992) {
+            padding-bottom: size(61);
+            overflow: hidden;
+        }
+    }
+
+    .swiper_2 {
+        overflow: visible;
+        margin-bottom: size(55);
+        display: none;
+
+        @include min(992) {
+            display: block;
+        }
+
+        &_ttl {
+            font-size: 16px;
+            line-height: size(38);
+            transition: all 0.1s cubic-bezier(0.43, 0.08, 0.41, 0.78);
+            will-change: transform;
+            opacity: .8;
+            color: #000;
+            margin-bottom: 0;
+            font-weight: 600;
+
+            @include min(992) {
+                font-size: size(17);
+            }
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 19px;
+            height: 19px;
+            background-color: #F2F2F2;
+            border-radius: 50%;
+
+            @include min(992) {
+                width: size(50);
+                height: size(50);
+                transition: all 0.5s cubic-bezier(0.43, 0.08, 0.41, 0.78);
+                // transform: scale(0.8);
+            }
+
+            &_outer {
+                width: size(55);
+                height: size(55);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s cubic-bezier(0.43, 0.08, 0.41, 0.78);
+            }
+        }
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        :global {
+
+            .swiper-slide {
+                width: auto !important;
+            }
+
+            .swiper-wrapper {
+                position: relative;
+                justify-content: space-between;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    border-top: 2px solid #CAD9D8;
+                    border-top-style: dashed;
+                    width: calc(100% - 5%);
+                    height: 1px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: -1;
+                }
+            }
+        }
+
+        :global(.swiper-slide-thumb-active) {
+            .swiper_2_ttl {
+                opacity: 1;
+                font-size: 17px;
+                margin-bottom: 0;
+                color: #fff;
+                transform: scale(1.2);
+                ;
+
+                @include min(992) {
+                    font-size: size(17);
+                }
+            }
+
+            .pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $primary;
+                box-shadow: 0px 2px 4px 0px rgba(0, 8, 185, 0.17);
+                transform: scale(.8);
+
+                &_outer {
+                    border: 1px solid $primary;
+                }
+            }
+        }
+    }
+
+    :global {
+        .container {
+            overflow: hidden;
+        }
+
+        .swiper-button-disabled {
+            svg {
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+.col_left {
+
+    @include min(992) {
+        width: 32%;
+    }
+
+    .img {
+        max-width: 362px;
+
+        img {
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        :global {
+            .ratio {
+                --bs-aspect-ratio: 56%;
+            }
+        }
+    }
+}
+
+.col_right {
+    @include min(992) {
+        width: 68%;
+    }
+
+    .right_content {
+        padding-top: size(13);
+
+        @include min(992) {
+            width: 75.8%;
+        }
+
+        :global {
+            .h5 {
+                color: #727070;
+                font-size: 14px;
+                margin-bottom: 9px;
+
+                @include min(992) {
+                    font-size: size(16);
+                    margin-bottom: size(9);
+                }
+            }
+
+            .h4 {
+                font-size: 16px;
+                margin-bottom: 14px;
+                color: #000;
+
+                @include min(992) {
+                    font-size: size(18);
+                    margin-bottom: size(14);
+                }
+            }
+        }
+
+        p {
+            color: #000;
+            margin-bottom: 0;
+            font-size: 14px;
+
+            @include min(992) {
+                font-size: size(16);
+            }
+        }
+    }
+}

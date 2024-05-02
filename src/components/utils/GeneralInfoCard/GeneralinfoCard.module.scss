@@ -1,0 +1,33 @@
+@import "../../../styles/util";
+.infocard{
+    
+    border-radius: 8px;
+    padding: size(30);
+   
+    color: #ffffff;
+    background-color: #107864;
+    height: 100%;
+    &_content{
+        position: relative;
+        padding-left: size(30);
+
+        &::before{
+            position: absolute;
+            content: "";
+            background-color: #ffffff;
+            height: 30px;
+            width: 2px;
+            left: 0;
+            top: 0;
+        }
+    }
+
+  
+    &_ttl{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: size(20);
+        line-height: 1;
+        
+    }
+}

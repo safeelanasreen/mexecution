@@ -1,0 +1,208 @@
+@import "../../styles/util";
+
+.row {
+    --bs-gutter-y: 20px;
+
+    @include min(992) {
+        --bs-gutter-y: 2.1rem;
+    }
+}
+
+.mx_banner_service {
+    // margin-top: var(--header-height);
+    position: relative;
+    padding: 20px 0 34px;
+    min-height: 420px;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 14;
+
+    @include min(992) {
+        min-height: 360px;
+        padding: size(55) 0;
+    }
+
+    @include min(1600) {
+        min-height: 492px;
+    }
+
+    .cover {
+        object-fit: cover;
+        transform: scale(1.3);
+        opacity: 0;
+    }
+
+    //image-banner
+    .desk_img {
+        @include max(991.98) {
+            display: none;
+        }
+    }
+
+    .resp_img {
+        @include lg {
+            display: none;
+        }
+    }
+
+    .banner_content {
+
+        @include lg {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.75s cubic-bezier(0.38, 0.005, 0.215, 1),
+                opacity 0.75s cubic-bezier(0.38, 0.005, 0.215, 1),
+                -webkit-transform 0.75s cubic-bezier(0.38, 0.005, 0.215, 1);
+            transition-delay: 0.2s;
+            will-change: transform, opacity;
+        }
+
+        // span {
+        //     @include lg {
+        //         transform: translateY(200%) scaleY(1.5);
+        //         will-change: transform;
+        //         line-height: 1.2;
+        //         display: block;
+        //     }
+        // }
+    }
+
+    // .content {
+    //     @include lg {
+    //         transform: translateY(50px);
+    //         opacity: 0;
+    //     }
+    // }
+
+    &:global(.visible) {
+
+        .banner_content {
+            // span {
+            //     transform: translateY(0);
+            //     transition: transform 0.8s cubic-bezier(.13, .81, .44, 1.01);
+            // }
+            opacity: 1;
+            transform: none;
+            will-change: transform, opacity;
+        }
+
+        // .content {
+        //     transform: initial;
+        //     opacity: 1;
+        //     transition: all 0.8s cubic-bezier(.13, .81, .44, 1.01);
+        //     transition-delay: 0.2s;
+        // }
+
+        .cover {
+            transform: initial;
+            opacity: 1;
+            transition: 0.8s transform $ease, 0.8s opacity $ease;
+            object-fit: cover;
+            // object-position: 0 20%;
+        }
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 14px;
+
+        @include min(992) {
+            margin-bottom: size(16);
+            line-height: 1.18;
+            font-size: size(45);
+        }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 0;
+
+        @include min(992) {
+            font-size: size(18);
+            line-height: 1.7;
+        }
+
+    }
+
+    :global(.breadcrumb) {
+        margin-bottom: 35px;
+
+        @include min(992) {
+            margin-bottom: 2px;
+        }
+    }
+
+    :global(.container) {
+        position: relative;
+        z-index: 2;
+
+        @include lg {
+            position: unset;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        // background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.0032387955182072714) 100%);
+        // background: linear-gradient(19deg, rgba(4, 4, 4, 1) 0%, rgba(4, 4, 4, 0) 65%);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0.3049194677871149) 0%);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+    }
+
+    .breadcrump_wrap {
+        position: absolute;
+        top: 30px;
+    }
+
+    &.blogs_banner {
+        @include min-max(768, 991.98) {
+            .cover {
+                object-position: 0 20% !important;
+            }
+        }
+    }
+
+}
+
+.mail_us,
+.call_us {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 30px;
+    width: 51px;
+    filter: drop-shadow(0px 2px 1px #a5a5a5);
+    height: 51px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 50%;
+    background: white;
+    z-index: 101;
+
+    svg {
+        fill: #007864 !important;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.mail_us {
+    @include min(992) {
+        bottom: 125px;
+    }
+}
+
+.call_us {
+    @include min(992) {
+        bottom: 50px;
+    }
+}

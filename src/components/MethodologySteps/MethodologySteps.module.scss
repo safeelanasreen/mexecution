@@ -1,0 +1,243 @@
+@import "../../styles/util";
+
+.section_steps {
+    background-color: #f7f7f7;
+    padding: 50px 0 90px 0;
+    text-align: center;
+    position: relative;
+    overflow: initial;
+
+    @include min(992) {
+        padding: size(109) 0;
+    }
+
+    &_ttl {
+        max-width: 748px;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: size(59);
+
+        @include min(992) {
+            padding-bottom: size(132);
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .steps {
+        position: relative;
+
+        &:after {
+            @include min(992) {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 100%;
+                background-color: #cecece;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &_count {
+            background-color: #d3d3d3;
+            border-radius: 25px;
+            padding: 10px 23px;
+            max-width: 92px;
+            width: 100%;
+            margin-left: size(38);
+            transition: all 0.5s ease-in-out;
+
+            p {
+                font-size: 16px;
+                color: #fff;
+                margin-bottom: 0;
+                white-space: nowrap;
+            }
+        }
+
+        .check_box {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            background-color: #d3d3d3;
+            border-radius: 50%;
+            left: -21px;
+            z-index: 2;
+            border: 4px solid #fff;
+            color: #fff;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            // transform: scale(0.9);
+            transform: scale(0);
+            // transition: 0.5s;
+            transition-delay: 0.2s
+        }
+    }
+
+    .steps_item {
+        padding-bottom: 20px;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+
+        &::after {
+            @include min(992) {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 0%;
+                background-color: #007864;
+                left: 50%;
+                top: 35%;
+                transform: translateX(-50%);
+                transition: all 1s ease-in-out;
+                transition-delay: 0.5s
+            }
+
+        }
+
+        &:before {
+            @include min(992) {
+                opacity: 0;
+
+                position: absolute;
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #007864;
+                transform: translateX(-50%);
+                left: 50%;
+                top: 40%;
+                transition: all 1.1s ease-in-out;
+                transition-delay: .5s
+            }
+
+        }
+
+        @include min(992) {
+            padding-bottom: size(60);
+        }
+
+
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+
+            :global {
+                .stepcard {
+                    margin-left: auto;
+
+                    @include lg {
+                        opacity: 0;
+                        transform: translateX(10px);
+                        transition: 0.5s all ease;
+                    }
+                }
+
+                .check-box {
+                    right: -24px;
+                    left: unset;
+                }
+
+                .steps-count {
+                    margin-right: size(38);
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    :global {
+        .active {
+
+            // &.in-view{
+            .check-box {
+                background-color: #007864;
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            .steps-count {
+                background-color: #007864;
+            }
+
+            // }
+            .stepcard {
+                transform: initial !important;
+                opacity: 1 !important;
+
+                @include lg {
+                    box-shadow: 4px 3px 3px -1px #c4c0c0
+                }
+            }
+
+            &:after {
+                height: 100%;
+            }
+
+            &:before {
+                top: 140%;
+                opacity: 1;
+            }
+
+            // .active-line{
+            //     height: 90%;
+            // }
+        }
+
+        .stepcard {
+
+            @include lg {
+                transform: translateX(-10px);
+                opacity: 0;
+                transition: 0.5s all ease;
+            }
+        }
+
+        .container {
+            overflow: hidden;
+        }
+    }
+
+    .methodology_shadow {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        pointer-events: none;
+        z-index: 11;
+
+        &_strip {
+            @include min(992) {
+
+                --height: 247px;
+                height: var(--height);
+                position: sticky;
+                top: calc(100% - var(--height));
+                width: 100%;
+                left: 0;
+                background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 100%);
+
+            }
+        }
+    }
+
+    :global(.btn) {
+        position: relative;
+        z-index: 12;
+        margin-top: 20px;
+
+        @include max(991.98) {
+            padding: 10px 20px !important;
+        }
+
+        @include lg {
+            margin-top: 30px;
+        }
+    }
+
+}

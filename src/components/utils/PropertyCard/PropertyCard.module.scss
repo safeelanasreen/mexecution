@@ -1,0 +1,62 @@
+@import "../../../styles/util";
+
+.property_card {
+    height: 100%;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    position: relative;
+    padding: 27px 28px 35px 28px;
+    border-radius: 12px;
+
+    @include min(992) {
+        padding: size(40) size(50) size(40) size(40);
+    }
+
+
+    &_icon {
+        position: relative;
+        width: 43px;
+        height: 43px;
+        margin-bottom: 8px;
+
+        @include min(992) {
+            margin-bottom: size(28);
+        }
+
+        img {
+            object-fit: contain;
+            object-position: left;
+        }
+    }
+
+    &_info {
+        flex: 1 0;
+
+        h4 {
+            @include lineHeight(20, 26);
+            font-weight: 500;
+            font-size: size(16);
+            color: $text-dark;
+            margin-bottom: 8px;
+            color: #000;
+
+            @include min(992) {
+                margin-bottom: size(14);
+            }
+        }
+
+        p {
+            @include lineHeight(18, 28);
+            font-size: 15px;
+            color: $text-dark;
+            margin-bottom: 0;
+            color: #000;
+            line-height: 1.6;
+
+            @include min(992) {
+                font-size: size(16);
+            }
+        }
+    }
+}

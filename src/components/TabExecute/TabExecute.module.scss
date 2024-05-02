@@ -1,0 +1,227 @@
+@import "../../styles/util";
+
+.section {
+    background-color: hsl(0, 0%, 0%);
+    padding: 50px 0;
+    position: relative;
+    overflow: initial;
+
+    @include min(992) {
+        background-color: #ECF4F7;
+        padding: size(100) 0;
+    }
+
+    .ring_bg {
+        pointer-events: none;
+
+        @include max(1199.98) {
+            display: none;
+        }
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc((26.51 / 100) * 100vw);
+
+        :global(.ratio) {
+            --bs-aspect-ratio: 88.5%;
+        }
+    }
+}
+
+.head_wrap {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include min(992) {
+        margin-bottom: size(43);
+    }
+
+    h2 {
+        color: hsl(0, 0%, 100%);
+        text-align: left;
+        max-width: 230px;
+        margin-bottom: 14px;
+
+
+
+        @include min(576) {
+            max-width: 100%;
+        }
+
+        @include min(992) {
+            color: #000;
+            text-align: center;
+            margin-bottom: size(18);
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    p {
+        @include lineHeight(16, 27);
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 31px;
+        color: hsl(0, 0%, 100%);
+
+
+        @include min(992) {
+            color: hsl(0, 0%, 0%);
+            text-align: center;
+            font-size: size(16);
+            margin-bottom: size(40);
+        }
+    }
+}
+
+.tab {
+    --bs-nav-pills-border-radius: 10rem;
+    --bs-nav-link-padding-y: 12px;
+    --bs-nav-link-padding-x: 34px;
+    --bs-nav-link-font-size: 16px;
+    --bs-nav-link-font-weight: 500;
+    --bs-nav-link-color: #000;
+    // justify-content: center;
+    margin-bottom: 33px;
+
+    @include min(992) {
+        margin-bottom: size(72);
+        justify-content: center;
+    }
+
+    :global {
+
+        .nav-item {
+            padding: 5px 5px;
+
+            @include min(992) {
+                padding: 7px size(13);
+            }
+        }
+
+        .nav-link {
+            border: 1px solid #ccc;
+            padding: 8px 14px;
+            background-color: hsl(0, 0%, 100%);
+
+            @include lg {
+                padding: 12px 36.2px;
+            }
+
+            &.active {
+                border-color: $primary;
+            }
+
+        }
+    }
+}
+
+
+.row_main {
+
+    @include lg {
+        --bs-gutter-x:#{size(85)};
+    }
+
+    .col_left {
+        @include min(992) {
+            width: 44.9%;
+            height: fit-content;
+            position: sticky;
+            top: 160px;
+        }
+
+
+    }
+
+    .col_right {
+        @include min(992) {
+            width: 54.5%;
+        }
+    }
+}
+
+
+.title {
+    font-weight: 500;
+    font-size: 16px;
+    display: none;
+
+    @include min(992) {
+        display: block;
+        font-size: size(22);
+        margin-bottom: 1rem;
+    }
+}
+
+.content {
+    &_wrap {
+        max-width: 696px;
+
+        @include min(992) {
+            margin-left: auto;
+        }
+    }
+
+    p {
+        @include lineHeight(16, 27);
+        font-size: 14px;
+        color: hsl(0, 0%, 100%);
+
+        @include min(992) {
+            font-size: size(16);
+            color: hsl(0, 0%, 0%);
+
+        }
+    }
+
+    ul {
+        @extend %list;
+        --size: 20px;
+        margin-bottom: 0;
+
+        li {
+            line-height: 1.4;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: hsl(0, 0%, 100%);
+
+            &::before {
+                background-image: url("/images/icon/arrow_right.svg");
+
+                @include max(991.98) {
+                    filter: invert(1);
+                }
+            }
+
+            @include lg {
+                color: rgba(0, 0, 0, 0.8);
+                font-size: size(16);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.img {
+    --bs-aspect-ratio: 69%;
+    border-radius: 11px;
+    background: #eee;
+    overflow: hidden;
+    margin-bottom: 33px;
+
+    @include lg {
+        margin-bottom: 0;
+    }
+
+    img {
+        object-fit: cover;
+    }
+}

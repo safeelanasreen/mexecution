@@ -1,0 +1,202 @@
+@import "../../styles/util";
+.facts_section {
+    padding: 20px 0 50px 0;
+    @include min(768) {
+        padding: size(35) 0 size(70) 0;
+    }
+
+    @include min(1200) {
+        padding: size(80) 0 size(110) 0;
+    }
+    .map_img {
+        width: 981px;
+        height: 673px;
+        left: 6%;
+        bottom: 0;
+        figure {
+            --bs-aspect-ratio: 68.6%;
+            img {
+                position: absolute;
+                object-fit: cover;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    &_ttl {
+        margin-bottom: 16px;
+        @include min(1200) {
+            margin-bottom: size(45);
+        }
+    }
+    .content_wrap {
+        max-width: 95%;
+        position: relative;
+        z-index: 1;
+        .des_wrap {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+            @include min(1200) {
+                margin-bottom: size(50);
+            }
+        }
+        &_list {
+            margin: 0;
+            padding: 0;
+            li {
+                list-style: none;
+                margin-bottom: 24px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #262626;
+                position: relative;
+                z-index: 1;
+                padding-left: size(50);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @include min(768) {
+                    font-size: 15px;
+                }
+                @include min(1200) {
+                    font-size: size(17);
+                    margin-bottom: size(40);
+                }
+                &::before {
+                    content: "";
+                    width: 21px;
+                    height: 21px;
+                    background-color: #007864;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: 4px;
+                    background-image: var(--tick-light);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 40%;
+                    @include min(1200) {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .responsive_wrap {
+        @include max(767.98) {
+            position: relative;
+            &:after {
+                display: none;
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 70px;
+                background: linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(255, 255, 255, 1) 35%,
+                    rgba(255, 255, 255, 0.8) 62%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+                left: 0;
+                bottom: 21%;
+                z-index: 2;
+            }
+        }
+        // .wrap_outer{
+        //     @include max(991.98) {
+        //         height: 364px;
+        //         overflow-y: scroll;
+        //         &::-webkit-scrollbar{
+        //             display: none;
+        //         }
+        //     }
+        // }
+        &.blur{
+            &:after{
+                display: none;
+            }
+        }
+    }
+    .cards_wrap {
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 16px;
+        justify-content: space-between;
+        
+        @include min(1200) {
+            column-gap: 20px;
+            justify-content: unset;
+        }
+    }
+    .wrapper {
+        row-gap: 40px;
+    }
+    :global {
+        .facts-card {
+            &.active {
+                @include max(1199.98) {
+                    .hover-content {
+                        height: 100%;
+                        opacity: 1;
+
+                        figure {
+                            img {
+                                filter: invert(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cards_wrap_bottom {
+        padding-top: size(25);
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 500;
+        position: relative;
+        z-index: 3;
+        @include min(768) {
+            max-width: 80%;
+        }
+        p {
+            position: relative;
+            z-index: 1;
+            font-size: 15px;
+            line-height: 1.5;
+            @include min(768) {
+                font-size: size(20);
+            }
+        }
+        button{
+            border: none;
+            background-color: transparent;
+            color: #007864;
+            @include min(768){
+                display: none;
+            }
+            svg{
+                transition: transform 0.3s ease-in;
+            }
+            .showmore{
+                svg{
+                    transform: rotate(90deg);
+                }
+                
+            
+                
+            }
+            .showless{
+                svg{
+                    transform: rotate(-90deg);
+                }
+                
+            
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,219 @@
+@import "../../styles/util";
+
+.mx_service_choose_loc {
+    padding: 50px 0;
+    overflow: initial;
+
+    @include lg {
+        margin-top: size(90);
+        padding: 0;
+    }
+
+
+    :global(.container) {
+        @include min(1200) {
+            max-width: 1479px;
+        }
+    }
+
+
+    .content_wrap {
+        border-radius: 19px;
+
+        background-color: #fff;
+
+        @include min(992) {
+            padding: size(73) size(50) size(44);
+        }
+    }
+
+    .row1 {
+        padding: 30px 0 40px 0;
+
+        @include lg {
+            padding: 0;
+        }
+    }
+}
+
+
+.col_left {
+    width: 100%;
+
+    @include min(992) {
+        width: 49.5%;
+        height: fit-content;
+        position: sticky;
+        top: 167px;
+    }
+
+    .img {
+        // max-width: 100%;
+
+
+        max-width: 659px;
+        width: 100%;
+
+        :global {
+            .ratio {
+                --bs-aspect-ratio: 62.3%;
+            }
+        }
+
+
+
+    }
+
+    :global {
+        .h4 {
+            @include lineHeight(24, 36);
+            width: 100%;
+            color: $primary;
+            letter-spacing: 0.01em;
+            padding: 0 16px;
+            margin-bottom:15px;
+
+            @include min(768) {
+                width: 71.3%;
+                margin: 0 auto;
+                margin-bottom: 0;
+            }
+
+            @include min(992) {
+                padding: 0;
+                @include lineHeight(30, 46);
+                font-size: size(21.9);
+                color: #000;
+            }
+
+
+            @include min(1200) {
+                font-size: size(26);
+            }
+
+            @include min(1600) {
+                font-size: size(30);
+            }
+        }
+    }
+
+
+}
+
+.col_right {
+    width: 100%;
+
+    @include min(992) {
+        width: 50.5%;
+    }
+
+    .right_content {
+        width: 100%;
+        padding: 0 16px;
+
+        @include min(992) {
+            width: 83%;
+            margin: 0 auto;
+            padding: 2px 0 0 6px;
+
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.75;
+            margin-bottom: 30px;
+
+            @include min(768) {
+                font-size: 16px;
+            }
+
+            @include min(992) {
+                @include lineHeight(18, 29);
+                padding-top: size(15);
+                margin-bottom: size(51);
+                font-size: size(18);
+            }
+
+        }
+
+        .choose_list {
+            margin-bottom: 34px;
+
+            @include min(992) {
+                margin-bottom: size(46);
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            ul li {
+                position: relative;
+                padding-left: 45px;
+                margin-bottom: 22px;
+
+                &::before {
+                    content: url("/images/icon/check.svg");
+                    position: absolute;
+                    left: 0;
+                }
+
+                @include min(992) {
+                    margin-bottom: size(30);
+                }
+
+                :global {
+                    .h5 {
+                        margin-bottom: 10px;
+                        font-size: 18px;
+
+                        @include min(992) {
+                            font-size: size(18);
+                            margin-bottom: size(14);
+                        }
+                    }
+                }
+
+                p {
+                    // @include lineHeight(14, 22);
+                    line-height: 1.75;
+                    margin-bottom: 0;
+                    font-size: 14px;
+
+
+                    @include min(992) {
+                        padding-top: 0;
+                        line-height: 1.75;
+                        font-size: size(16);
+                    }
+                }
+            }
+
+        }
+
+        :global {
+
+            .button-sm {
+                font-size: 16px;
+                // width: calc(100% - 32px);
+                margin: 0 auto;
+                display: block;
+                padding: 15.5px 0;
+
+                @include min(576) {
+                    max-width: 50%;
+                }
+
+                @include min(992) {
+                    padding: size(16) size(41);
+                    max-width: 153px;
+                    font-size: size(16);
+                    margin: initial;
+                    margin-left: 45px;
+                }
+            }
+        }
+
+    }
+}

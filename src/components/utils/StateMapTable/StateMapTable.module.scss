@@ -1,0 +1,157 @@
+@import "../../../styles/util";
+
+.table_wrap {
+    @include max(991.98) {
+        max-width: 330px;
+    }
+
+    table {
+        border-radius: 12px;
+        overflow: hidden;
+        width: 100%;
+
+        @include max(991.98) {
+            max-width: 312px;
+        }
+
+        tr {
+            border-bottom: 0;
+
+            &:not(:first-child) {
+                td {
+                    padding: 15px;
+                    position: relative;
+
+                    @include lg {
+                        padding: size(14);
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                td {
+                    padding-top: size(20) !important;
+                }
+            }
+
+            &:first-of-type {
+                background-color: #007864;
+
+                @include min(992) {
+                    position: sticky;
+                    top: 0;
+                    z-index: 1;
+                }
+
+                td {
+                    color: #fff;
+                    font-weight: 500;
+                    vertical-align: middle;
+                    text-align: center;
+
+                    p {
+                        color: #fff;
+                        font-weight: 500;
+                        font-size: 15px;
+                        letter-spacing: 0.01em;
+                        margin-bottom: 0;
+
+                        @include lg {
+                            font-size: size(15);
+                        }
+
+                        &:last-of-type {
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            td {
+                // padding-left: 64px;
+                padding: 15px;
+
+                @include min(768) {
+                    // padding: 20px;
+                    // padding-left: 65.5px;
+                }
+
+                @include min(1200) {
+                    padding: 10px;
+                }
+
+                @include min(992) {
+                    padding: size(20) size(20) size(20) size(5);
+                }
+
+                &:first-of-type {
+                    // padding-left: 25px;
+                    text-align: left !important;
+                    width: 192px;
+
+                    @include min(992) {
+                        padding-left: size(24);
+                        width: auto;
+                    }
+                }
+
+                &:last-of-type {
+                    padding-right: 25px;
+
+                    @include min(1200) {
+                        padding-right: size(24);
+                    }
+                }
+            }
+
+            &:last-of-type {
+                td {
+                    padding-bottom: size(31);
+                }
+            }
+        }
+
+        tbody {
+            background-color: #fff;
+
+            tr {
+                td {
+                    letter-spacing: 0.01em;
+                    color: rgba(0, 0, 0, 0.78);
+                    // text-align: center;
+                    font-size: 14px;
+                    white-space: nowrap;
+
+                    @include lg {
+                        font-size: size(18);
+                    }
+                }
+
+                &:not(:first-child) {
+                    td {
+                        font-size: 12px;
+                        font-weight: 400;
+
+                        @include lg {
+                            font-size: size(16);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    &.theme_secondary {
+        tr {
+            &:first-of-type {
+                background-color: $yellow-light;
+
+                td {
+                    color: $black;
+                }
+            }
+        }
+    }
+}

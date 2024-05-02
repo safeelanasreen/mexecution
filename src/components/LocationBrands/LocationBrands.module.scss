@@ -1,0 +1,145 @@
+@import "../../styles/util";
+
+.mx_location_brands {
+    padding: 50px 0 100px 0;
+    background-color: #F5F5F7;
+
+    :global {
+        .swiper {
+            overflow: initial;
+
+            @include min(768) {
+                overflow: hidden;
+                position: static;
+            }
+
+            @include min(1200) {
+                &::after {
+                    content: '';
+                    width: 100px;
+                    left: -20px;
+                    bottom: 0;
+                    position: absolute;
+                    z-index: 10;
+                    display: block;
+                    height: 100%;
+                    background: linear-gradient(90deg, rgb(245, 247, 246) 18%, rgb(255 255 255 / 0%));
+
+                    @include min(768) {
+                        left: -3px;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    width: 100px;
+                    right: -20px;
+                    left: auto;
+                    rotate: 180deg;
+                    bottom: 0;
+                    position: absolute;
+                    z-index: 10;
+                    display: block;
+                    height: 100%;
+                    background: linear-gradient(90deg, rgb(245, 247, 246) 18%, rgb(255 255 255 / 0%));
+
+                    @include min(768) {
+                        right: -3px;
+                    }
+                }
+
+            }
+
+        }
+
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        .nav-arrow {
+            display: none !important;
+        }
+
+        .swiper-slide {
+            display: flex;
+        }
+
+        .swiper-pagination {
+            bottom: -50px;
+
+            @include lg {
+                display: none;
+            }
+
+            &-bullet {
+                transition: .3s ease;
+
+                &-active {
+                    // width: 23px;
+                    height: 8px;
+                    border-radius: 4px;
+                    background-color: #296462;
+                }
+            }
+        }
+    }
+
+    // @include min(992) {
+    //     padding: 55px 0 77px;
+    // }
+
+    @include min(992) {
+        padding: size(100) 0 size(113);
+    }
+
+    .head_wrap {
+        margin-bottom: size(50);
+
+        @include min(992) {
+            margin-bottom: size(50);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 22px;
+            color: $primary;
+
+            @include lg {
+                color: #000;
+            }
+
+            @include min(1200) {
+                margin-bottom: size(15);
+                font-size: size(30);
+                line-height: 1.45;
+            }
+        }
+
+        p {
+            color: #292929;
+
+            @include min(992) {
+                margin-bottom: size(85);
+                line-height: 1;
+            }
+        }
+    }
+
+    .location_companies {
+        position: relative;
+
+        &_item {
+            // max-width: 174px;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+
+
+            img {
+                object-fit: contain;
+                width: auto;
+            }
+        }
+    }
+}

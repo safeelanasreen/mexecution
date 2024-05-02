@@ -1,0 +1,381 @@
+@import "../../styles/util";
+
+.mx_state_map {
+    background-color: $primary-dark;
+    padding: 40px 0px;
+
+    @include lg {
+        padding: size(110) 0;
+    }
+
+    .map_main_hd {
+        margin-bottom: 27px;
+
+        @include lg {
+            line-height: 1;
+            margin-bottom: size(34);
+        }
+    }
+
+    .map_top {
+        @include lg {
+            margin-bottom: size(130);
+        }
+    }
+}
+
+.col_left {
+
+    .loc_btn_wrap {
+        display: flex;
+        width: 100%;
+        margin-bottom: 55px;
+        gap: 11px;
+        @include max(575.98){
+            overflow-x: auto;
+
+        }
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        @include lg {
+            gap: 24px;
+            margin-bottom: size(27);
+        }
+
+        .loc_btn {
+            border: 0;
+            border-radius: size(30);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            font-size: 12px;
+            color: $black;
+            transition: all 0.3s ease;
+            padding: 10px 12px;
+            white-space: nowrap;
+
+            @include lg {
+                font-size: size(16);
+            }
+            @include xl{
+                padding: size(14) size(30);
+            }
+
+
+            &:hover {
+                @include lg {
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
+
+            &.active {
+                background-color: $secondary ;
+
+                &:hover {
+                    background-color: $secondary ;
+                    color: $black
+                }
+            }
+        }
+    }
+
+
+    .img_btn_wrap {
+        display: flex;
+        width: 100%;
+
+        @include lg {
+            gap: size(50);
+            margin-left: size(38);
+            margin-bottom: size(80);
+        }
+
+        .img_btn {
+            max-width: 134px;
+            width: 100%;
+            border: 0;
+            padding: 0;
+            border: 1.5px solid $green-light;
+            background-color: $primary-dark;
+            border-radius: 5px;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow 0.3s ease;
+
+
+            :global(.ratio) {
+                --bs-aspect-ratio: 63.64%
+            }
+
+            &.active {
+                border-color: $secondary;
+            }
+
+            &:hover {
+                @include lg {
+                    box-shadow: 0px 0px 3px 0px #ffffff;
+                    transition: box-shadow 0.3s ease;
+
+                }
+            }
+        }
+
+    }
+
+    .img_zoom {
+        max-width: 651px;
+        width: 100%;
+        margin-bottom: 28px;
+        
+        position: relative;
+
+        @include lg {
+            margin-bottom: 0;
+        }
+
+        :global(.ratio) {
+            --bs-aspect-ratio: 61%;
+
+            @include lg {
+                --bs-aspect-ratio: 56%
+            }
+        }
+        .enlarge{
+            position: absolute;
+            color: $white;
+            z-index: 5;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: $primary;
+            box-shadow: 0 0 3px 0 rgba(255,255,255,.6);
+          svg{
+            transition: all 0.25s ease-in-out;
+          }
+                
+   
+            &:hover{
+                @include min(1200){
+                  svg{
+                    transform: scale(1.1);
+                  }
+                        
+
+          
+                }
+            }
+
+        }
+    }
+
+}
+
+.col_right {
+
+    .state_disc {
+        margin-bottom: 40px;
+
+        @include lg {
+            max-width: 370px;
+            width: 100%;
+            margin-left: auto;
+            margin-top: size(80);
+            margin-bottom: 0;
+        }
+
+        @include xl {
+            max-width: 460px;
+        }
+
+        @include min(1600) {
+            max-width: 565px;
+
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                color: $white;
+                font-weight: 500;
+                margin-bottom: 12px;
+                padding-left: 25px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                @include lg {
+                    font-size: size(16);
+                    margin-bottom: size(12);
+                    padding-left: size(30);
+                    background-position: center left;
+                }
+
+                &::before {
+                    background-color: transparent;
+                    top: 0;
+                    background-position: center left;
+                    background-size: 50%;
+
+                    @include lg {
+                        width: 36px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+
+        &_ttl {
+            margin-bottom: 15px;
+            font-size: 18px;
+
+            @include lg {
+                font-size: size(24);
+                margin-bottom: size(30);
+                line-height: 1;
+            }
+        }
+
+        &_detail {
+            p{
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+
+            @include lg {
+                font-size: size(16);
+                line-height: 1.5;
+                margin-bottom: size(30);
+
+            }
+        }
+        :global{
+            .btn-link {
+                text-decoration: none !important;
+            }
+        }
+        }
+    }
+}
+
+
+.map_table {
+    &_hd {
+        margin-bottom: 16px;
+
+        @include lg {
+            line-height: 1;
+            margin-bottom: size(20);
+        }
+
+        span {
+            font-weight: 600;
+
+            @include max(991.98) {
+                font-size: 18;
+            }
+        }
+    }
+
+    &_disc {
+        margin-bottom: 42px;
+        font-size: 14px;
+        line-height: 1.5;
+
+        @include lg {
+            max-width: 725px;
+            width: 100%;
+            font-size: size(16);
+            margin-bottom: size(60);
+            line-height: 1.6;
+        }
+    }
+
+    &_wrap {
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @include max(991.98) {
+            overflow-x: auto;
+            // gap: 20px;
+        }
+    }
+}
+.map_modal{
+    --bs-border-width:0;
+    --bs-modal-bg:transparent;
+    :global{
+        --bs-modal-header-padding:0;
+        .modal-header{
+            position: relative;
+            height: 50px;
+            .btn-close{
+                position: absolute;
+                right:0;
+                top: 0;
+                z-index: 2;
+                --bs-btn-close-opacity:1;
+                box-shadow:none !important;
+                background-color: #ffffff;
+                border-radius: 50%;
+                width: 35px;
+                height:35px;
+                padding: 0;
+                margin: 0;
+                @include min(768){
+                    width: 40px;
+                    height:40px;
+                }
+                &:hover{
+                    @include min(1200){
+                        --bs-btn-close-opacity:0.5;
+                    }
+                    
+                }
+                
+            }
+        }
+        .modal-body{
+            --bs-modal-padding:0;
+        }
+      .modal-dialog{
+        --bs-modal-width:95%;
+        @include min(992){
+            --bs-modal-width:90%;   
+        }
+        @include min(1400){
+            --bs-modal-width:1352px;
+        }
+      }
+    }
+    .modal_img{
+        max-width: 1352px;
+        
+        width: 100%;
+        height: 100%;
+        figure{
+           --bs-aspect-ratio:56.36%;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            img{
+                object-fit: cover;
+            }
+        }
+    }
+   
+}

@@ -1,0 +1,123 @@
+@import "../../styles/util";   
+ .automotive{
+    column-gap: size(40);
+    @include min(992){
+        padding-bottom: size(40);
+        border-bottom: 1px solid #E2E2E2;
+        @include min(1200){
+            column-gap: size(70);
+ 
+        }
+    
+    }
+    &_img{
+        margin-bottom: 30px;
+        @include min(768){
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include min(992){
+            max-width: 509px;
+            width: 100%;
+            flex: 0 0 38.1%;
+            margin-bottom: 0;
+        }
+       
+        figure{
+         --bs-aspect-ratio:  98.24%;
+         overflow: hidden;
+         border-radius: 5px;
+         @include min(992){
+            --bs-aspect-ratio:   125.73%;
+
+         }
+         img{
+            object-fit: cover;
+         }
+
+
+        }
+
+    }
+    &_content{
+        .ttl{
+            font-size: size(24);
+            margin-bottom: size(20);
+        }
+        .content_p{
+            max-width: 98%;
+            width: 100%;
+            p{
+                margin-bottom: size(40);
+            }
+
+        }
+    }
+    &_details{
+        column-gap: size(105);
+        flex-wrap: wrap;
+        row-gap: 40px;
+        margin: 0 auto;
+        @include min(768){
+            max-width: 85%;
+            column-gap: size(20);
+            justify-content: center;
+
+        }
+        @include min(992){
+            row-gap: size(40);
+            @include min(1200){
+                column-gap: size(70);
+                max-width: 75%;
+
+
+            }
+
+
+        }
+
+        &_item{
+            width: 25%;
+            .count{
+                .num{
+                    color: $green;
+                    font-size: 28px;
+                    font-weight: 600;
+                    @include min(992){
+                        font-size: size(32);
+     
+                    }
+                }
+            }
+        }
+
+    }
+    &_logo{
+        margin-top: 28px;
+        @include min(992){
+            margin-top: size(78);
+            background-color: #ffffff;
+            border-radius: 8px;
+
+        }
+        &_wrap{
+            column-gap:32px;
+            @include min(992){
+                column-gap: size(100);
+                padding: 20px 0;
+  
+            }
+            figure{
+            max-width: 80px;
+            width: 100%;
+            
+            overflow: hidden;
+           
+            img{
+                object-fit: contain;
+            }
+            }
+        }
+    }
+}

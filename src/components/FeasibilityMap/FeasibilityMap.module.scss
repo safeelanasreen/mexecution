@@ -1,0 +1,275 @@
+@import "../../styles/util";
+
+.section {
+  background-color: #0e403e;
+
+  @include min(992) {
+    padding: size(92) 0 size(100);
+  }
+
+  .maplocate_wrap {
+    position: relative;
+    margin-bottom: 33px;
+
+    @include lg {
+      margin-bottom: 0;
+    }
+
+    h5 {
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      width: 100%;
+      font-size: 24px;
+      margin-bottom: 0;
+
+      @include lg {
+        top: 0;
+        font-size: size(30);
+      }
+    }
+  }
+
+  .description {
+    ul {
+      @extend %list;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+
+      &>li {
+        flex: 0 0 auto;
+        width: 100%;
+        padding-left: 20px;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:nth-last-of-type(-n + 2) {
+          @include lg {
+            margin-bottom: 0;
+          }
+        }
+
+        @include min(992) {
+          width: 48.5%;
+          line-height: 1;
+          padding-left: 28px;
+          margin-bottom: size(17);
+        }
+
+        &::before {
+          top: -1;
+          left: -5px;
+          background-size: 50%;
+
+          @include max(767.98) {
+            background-image: url("/images/icon/arrow_right_wht.svg");
+          }
+
+          @include lg {
+            background-size: 60%;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+
+    p,
+    li {
+      @include lineHeight(16, 25);
+      font-size: 14px;
+      letter-spacing: 0.01em;
+
+      color: rgba(255, 255, 255);
+
+      @include min(992) {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: size(16);
+      }
+    }
+  }
+
+  :global {
+    .theme-light {
+      .accordion {
+        --bs-accordion-btn-color: #fff !important;
+        --bs-accordion-active-color: #ffffff !important;
+
+        @include lg {
+          padding-left: size(20);
+        }
+
+        &-item {
+          border-color: #517574;
+          padding: 28px 0;
+          position: relative;
+
+          @include lg {
+            padding: size(30) 0;
+          }
+
+          &:not(:first-child) {
+            border-top: 0;
+          }
+
+          &:first-child {
+            @include max(991.98) {
+              border-top: 0;
+            }
+          }
+
+          &.active {
+            border-bottom: 2px solid #21c1a4;
+          }
+        }
+
+        &-body {
+          padding: 16px 0 0 0;
+
+          @include lg {
+            padding: size(26) 0 0 0;
+
+            p {
+              margin: 0;
+            }
+          }
+        }
+
+        &-button {
+          padding: 0;
+          line-height: 1.5;
+          position: unset;
+
+          @include lg {
+            line-height: initial;
+          }
+
+          &::after {
+            filter: brightness(0) invert(1);
+
+            @include lg {
+              width: 20px;
+              height: 20px;
+              background-size: contain;
+              // margin-right: 7px;
+            }
+          }
+
+          &::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            top: 0;
+            border-radius: 0;
+          }
+
+          &.collapsed::after {
+            background-image: url("/images/icon/plus-green.svg");
+
+          }
+
+          &:not(.collapsed)::after {
+            background-image: url("/images/icon/minus-green.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin-bottom: 4px;
+
+  @include min(992) {
+    margin-bottom: size(40);
+    padding-left: size(20);
+  }
+
+  h3 {
+    margin-bottom: 24px;
+
+    @include lg {
+      margin-bottom: size(14);
+    }
+  }
+
+  p {
+    @include lineHeight(16, 27);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 27px;
+
+    @include min(992) {
+      font-size: size(16);
+      margin-bottom: size(20);
+    }
+  }
+
+  h6 {
+    font-size: 18px;
+    margin-bottom: 21px;
+    font-weight: 500;
+
+    @include lg {
+      margin-bottom: 14px;
+      font-size: size(22);
+    }
+  }
+
+  .btn_wrap {
+    :global(.btn) {
+      margin-right: 11px;
+      position: relative;
+
+      @include min(992) {
+        margin-right: size(24);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 13px;
+        right: 8px;
+        background-image: url("/images/icon/arrow_white.svg");
+        background-repeat: no-repeat;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover::after {
+        filter: invert(1)
+      }
+    }
+
+    :global {
+      .btn-outline-secondary {
+        --bs-btn-color: #ffffff;
+        --bs-btn-border-color: rgba(255, 255, 255, 0.29);
+      }
+
+      .btn-sm {
+        // --bs-btn-padding-y: .4rem;
+        // --bs-btn-padding-x: 1.5rem;
+        padding: size(7) size(31.2);
+        padding-left: size(20);
+
+        --bs-btn-font-size: 15px;
+        --bs-btn-font-weight: 500 !important;
+
+        &:nth-child(2) {
+          padding: size(7) size(33);
+          padding-left: size(20);
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

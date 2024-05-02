@@ -1,0 +1,67 @@
+@import "../../styles/util";
+
+.mx_services_sec {
+    @include max(991.98) {
+        padding: 50px 0;
+        background-color: #D2EFEA;
+    }
+    .service {
+        &_head {
+            background-color: #D2EFEA;
+            padding-top: 50px;
+
+            @include min(992) {
+                padding-top: size(95);
+
+            }
+
+            h2 {
+                margin-bottom: 19px;
+            }
+        }
+
+        &_body {
+            background-color: #F4FDFC;
+            padding-bottom: 50px;
+            padding-top: 40px;
+
+            @include min(992) {
+                padding-bottom: size(109);
+
+            }
+        }
+    }
+
+    .head_wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        margin-bottom: size(53);
+    }
+
+    .slider_wrap {
+        margin-bottom: size(60);
+    }
+}
+
+
+.nav_wrap {
+    :global {
+        .nav-link {
+            --bs-nav-link-padding-y: 24px;
+            --bs-nav-link-padding-x: 34px;
+            --bs-nav-pills-border-radius: 15px 15px 0px 0px;
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #b4eae0;
+            color: $primary;
+            font-weight: 500;
+
+        }
+
+        .row {
+            --bs-gutter-x: 1.6667rem;
+        }
+    }
+}

@@ -1,0 +1,173 @@
+@import "../../../styles/util";
+
+
+
+
+.select_wrap {
+    :global {
+        .custom-select {
+            &__single-value {}
+
+            &_menu {}
+
+            &_menu-list {}
+
+            &__control {
+                border-radius: 0px;
+                border-color: hsl(0, 0%, 0%);
+                background: none;
+                min-height: initial;
+                border: 0;
+
+                &--is-focused {
+                    border-color: hsl(0, 0%, 0%);
+                    box-shadow: none;
+                }
+            }
+
+            &__input-container {
+                margin: 0px;
+                // padding-bottom: 6px;
+                // padding-top: 6px;
+                padding: 0;
+
+                @include lg {}
+
+                input {
+                    color: #4C4C4C;
+
+                    ::-webkit-input-placeholder {
+                        /* Edge */
+                        color: #4C4C4C;
+                    }
+
+                    :-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: #4C4C4C;
+                    }
+
+                    ::placeholder {
+                        color: #4C4C4C;
+                    }
+                }
+            }
+
+
+            &__value-container {
+                padding: 0;
+
+                @include lg {}
+
+                .custom-select__placeholder {
+                    color: #000000;
+                    font-size: 15px;
+                    font-weight: 400;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+
+                    @include min(992) {
+                        font-size: size(16);
+                    }
+
+                }
+            }
+
+
+            &__indicators {
+                position: relative;
+
+            }
+
+            &__placeholder {}
+
+            &__indicator {
+                color: $primary;
+                padding: 0;
+
+                &-separator {
+                    display: none;
+                }
+            }
+
+            &__option--is-selected {
+                background-color: $primary;
+            }
+
+            &__menu {
+                z-index: 9;
+                border-radius: 0px;
+                border: 1px solid #eaf0f6;
+                box-shadow: 0px 2px 2px rgb(214 227 240 / 20%);
+                width: auto;
+                min-width: 100%;
+                left: 0;
+                margin-top: 0px;
+            }
+
+            &__option {
+                font-size: 16px;
+                white-space: nowrap;
+                font-weight: 500;
+                padding: 7px 0;
+                color: rgba(0, 0, 0, 0.52);
+                transition: color ease 0.3s;
+                cursor: pointer;
+
+                &:active {
+                    background-color: transparent;
+                }
+
+
+
+            }
+
+            &__menu-list {
+                padding: 15px 22px;
+            }
+
+            &__option--is-focused {
+                color: rgb(0, 0, 0);
+                background-color: transparent;
+            }
+
+            &__option--is-selected {
+                color: rgb(0, 0, 0);
+                background-color: transparent;
+            }
+
+
+        }
+    }
+
+    &:global {
+        &.form-control {
+            border-bottom: 0.0625rem solid #000000 !important;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            border-radius: 0;
+            background-color: transparent;
+
+            @include lg {
+                padding: 13.5px 0;
+            }
+
+            &:not(:placeholder-shown) {
+                padding: 16px 0;
+            }
+
+        }
+    }
+
+    &.border_primary {
+        &:global {
+            &.form-control {
+                border-bottom: 0.0625rem solid #A0A0A0 !important;
+            }
+        }
+    }
+}

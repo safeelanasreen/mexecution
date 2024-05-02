@@ -1,0 +1,157 @@
+@import "../../../styles/util";
+
+.detail_card {
+  --title: 16px;
+  --info: 15px;
+  --bg: #f4f8f8;
+  --shadow: 0px 4px 0px -1px rgb(16 119 17);
+  --size: 43px;
+
+  border: 1px solid #c3e3de;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  padding: 28px 28px;
+  transition: 0.3s all ease;
+  transform: translateY(0);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    @include min(992) {
+      transform: translateY(-3px);
+      // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      will-change: transform;
+    }
+  }
+
+  @include min(992) {
+    // --title: #{size(16)};
+    --info: 16px;
+    --size: #{size(43)};
+    padding: size(36) size(19) size(40) size(35);
+  }
+
+  &_icon {
+    position: relative;
+    width: 33px;
+    height: 33px;
+    margin-bottom: 15px;
+
+    @include min(992) {
+      margin-bottom: size(16);
+      width: var(--size);
+      height: var(--size);
+    }
+
+    img {
+      object-fit: contain;
+      object-position: left;
+    }
+  }
+
+  &_info {
+    flex: 1 0;
+
+    h4 {
+      font-weight: 500;
+      font-size: var(--title);
+      color: $text-dark;
+      margin-bottom: 10px;
+      line-height: 1.45;
+
+      @include min(992) {
+        margin-bottom: size(22);
+      }
+    }
+
+    p {
+      // line-height: 1.56;
+      @include lineHeight(16, 27);
+      font-size: var(--info);
+      color: $text-dark;
+      margin-bottom: 0;
+    }
+  }
+
+  &_secondary {
+    --title: 16px;
+    --info: 14px;
+    --bg: #f2f2f2;
+    --shadow: 0;
+    border: 0;
+    // @include min(992) {
+    //     --title: #{size(22)};
+    //     --info: 16px;
+    //     padding: size(40);
+
+    // }
+    :global {
+      .btn {
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+  }
+
+  &_tertiary {
+    --bg: #ffffff;
+    --title: 18px;
+    --info: 14px;
+    --shadow: 0;
+
+    @include lg {
+      --title: 22px;
+      --info: 16px;
+    }
+  }
+
+  &_transfer {
+    h4 {
+      font-size: 18px;
+      color: hsl(0, 0%, 0%);
+
+      @include lg {
+        font-size: 22px;
+        color: $primary !important;
+
+      }
+
+      // p {
+      //   font-size: 16px !important;
+
+      //   @include lg {
+      //     font-size: size(16) !important;
+      //   }
+      // }
+
+
+    }
+  }
+
+  &_supplier,
+  &_supplier_tab {
+    background-color: #F2F2F2 !important;
+    border: 0;
+    --shadow: 0;
+  }
+
+  &.feasibility_theme {
+    h4 {
+      @include lg {
+        color: $primary;
+      }
+    }
+  }
+
+  // &.project_card {
+  //   @include lg {
+  //     min-height: 400px;
+  //     height: auto;
+  //   }
+  // }
+
+}

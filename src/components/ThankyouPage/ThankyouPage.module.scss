@@ -1,0 +1,33 @@
+@import "../../styles/util";
+
+.thankyou {
+    height: calc( 100vh - 89.44px);
+    padding: 40px 0;
+    @include min(1200) {
+        padding: size(80) 0;
+    }
+  
+    &_inner {
+        text-align: center;
+        max-width: 606px;
+    }
+    &_ttl {
+        font-size: 25px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        @include min(768) {
+            font-size: size(50);
+        }
+        @include min(1200) {
+            font-size: size(80);
+        }
+    }
+    &_description {
+        font-size: size(16);
+        margin-bottom: 30px;
+        line-height: 1.875;
+        @include min(1200) {
+            margin-bottom: size(56);
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import "../../styles/util";
+
+.banner_sec {
+    min-height: 100vh;
+    background-color: #eee;
+    padding: 70px 0;
+overflow: initial;
+    :global(.container) {
+        max-width: 800px;
+    }
+}
+
+
+.card{
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    &_head {
+        background-color: #000;
+        padding: 30px;
+        color: #fff;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 300;
+        p{
+            font-size: 13px;
+            margin-bottom: 0px;
+            margin-top: 2px;
+            color: #989898;
+        }
+    }
+    &_body {
+        padding: 30px 0;
+    }
+}
+
+.circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    border: 2px solid #fff;
+    color: #fff;
+    margin-left: -13px;
+    &:first-of-type {
+        margin-left: 0;
+    }
+}
+
+.code {
+    background: #000;
+    border-radius: 10px;
+    padding: 15px 33px;
+    margin-bottom: 16px;
+}
+.cmnt {
+    display: block;
+    color: #6c6c6c;
+    margin-bottom: 3px;
+}
+
+.title_sticky {
+    position: sticky;
+    top: 76px;
+    background: #eee;
+    padding: 20px 10px;
+}

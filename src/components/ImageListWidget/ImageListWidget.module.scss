@@ -1,0 +1,199 @@
+@import "../../styles/util";
+
+.section {
+    @include max(991.98) {
+        // margin-bottom: size(95);
+        margin-bottom: 45px;
+    }
+
+    :global(.accordion-rounded) {
+        margin-top: 34px;
+
+        @include max(991.98) {
+            // margin-bottom: size(38);
+        }
+
+        :global .accordion-item {
+            @include max(991.98) {
+                margin-bottom: 12px;
+            }
+
+        }
+
+        :global .accordion-button {
+
+            font-size: 16px;
+
+            @include max(991.98) {
+                padding: 17px;
+            }
+
+            @include lg {
+                font-size: size(18);
+            }
+
+            &::after {
+                background-image: url("/images/icon/plus-green.svg");
+
+                @include max(991.92) {
+                    margin-right: 21px;
+                }
+            }
+
+            &:not(.collapsed)::after {
+                background-image: url("/images/icon/minus-green.svg");
+            }
+        }
+
+        :global .accordion-body {
+            @include max(991.98) {
+                padding-left: 0;
+                padding: 18px 0;
+            }
+
+            // @include lg {
+            //     padding-bottom: 16px;
+            // }
+
+            ul {
+                padding-left: 0;
+                margin-bottom: 0;
+
+                li {
+                    list-style: none;
+                    position: relative;
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                    padding-left: 26px;
+
+                    @include lg {
+                        font-size: size(16);
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        --size: 30px;
+                        width: var(--size);
+                        height: var(--size);
+                        border-radius: 50%;
+                        left: 0;
+                        top: -4px;
+                        background-image: var(--tick-primary);
+                        background-repeat: no-repeat;
+                        background-position: left;
+                        background-size: 35%;
+
+                        @include lg {
+                            background-size: 44%;
+                        }
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+.row_main {
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include lg {
+        margin-bottom: size(50);
+    }
+
+    .col_left {
+        @include min(992) {
+            width: 42.5%;
+        }
+    }
+
+    .col_right {
+        @include min(992) {
+            width: 57.5%;
+        }
+    }
+}
+
+.title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    @include min(992) {
+        font-size: size(22);
+        margin-bottom: 1rem;
+    }
+}
+
+.content {
+    &_wrap {
+        max-width: 696px;
+
+        @include min(992) {
+            margin-left: auto;
+        }
+    }
+
+    p {
+        @include lineHeight(16, 27);
+        font-size: 16px;
+        margin-bottom: 0;
+
+        @include min(992) {
+            font-size: size(16);
+        }
+    }
+
+    ul {
+        @extend %list;
+        --size: 20px;
+
+        li {
+            line-height: 1.4;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.8);
+            margin-bottom: 15px;
+
+            &::before {
+                background-image: url("/images/icon/arrow_right.svg")
+            }
+
+            @include lg {
+                font-size: size(16);
+            }
+
+        }
+    }
+}
+
+.img {
+    --bs-aspect-ratio: 69%;
+    border-radius: 11px;
+    background: #eee;
+    overflow: hidden;
+    margin-bottom: 33px;
+
+    @include lg {
+        margin-bottom: 0;
+    }
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.row {
+    --bs-gutter-y: 22px;
+    padding-bottom: 10px;
+}

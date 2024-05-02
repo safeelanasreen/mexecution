@@ -1,0 +1,44 @@
+@import "../../../styles/util";
+.imagecircle{
+    width: 100%;
+    max-width: 104px;
+    .image_wrap{
+        figure{
+            width: 104px;
+            --bs-aspect-ratio:100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid transparent;
+            margin-bottom: 10px;
+            transition: border 0.3s ease-in-out;
+            img{
+                object-fit: cover;
+            }
+     
+        }
+    }
+    .text_wrap{
+        p{
+            font-size: 16px;
+            color:#707070;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+        
+    }
+    &:hover{
+        @include min(1200){
+            .image_wrap{
+                figure{
+                    border: 2px solid #FED800;
+                }
+            }
+            .text_wrap{
+                p{
+                    color: #000000;
+                }
+            }
+
+        }
+    }
+}

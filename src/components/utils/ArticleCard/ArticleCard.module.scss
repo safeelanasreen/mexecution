@@ -1,0 +1,297 @@
+@import "../../../styles/util";
+
+.blog_card {
+    position: relative;
+
+    &_lg {
+        .blog_card_img {
+            margin-bottom: 24px;
+
+            @include min(992) {
+                margin-bottom: size(28);
+            }
+
+            .img {
+                --bs-aspect-ratio: 56.4%;
+                border-radius: 10px;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                overflow: hidden;
+
+                img {
+                    object-fit: cover
+                }
+            }
+
+        }
+
+        .blog_card_info {
+            padding-top: 0;
+
+            h4 {
+                color: $primary;
+                font-size: 24px;
+                letter-spacing: 0em;
+                line-height: 1.6;
+                margin-bottom: 7px;
+
+                @include min(992) {
+                    line-height: 1.4;
+                    color: #000;
+                    font-size: size(36);
+                    margin-bottom: 4px;
+                }
+            }
+
+            .arrow {
+                opacity: 0;
+            }
+        }
+
+
+
+    }
+
+    &_inline {
+        display: flex;
+        // align-items: center;
+
+        .blog_card_img {
+            margin-right: 17px;
+            max-width: 117px;
+            width: 100%;
+
+            @include min(576) {
+                max-width: 200px;
+            }
+
+            @include min(992) {
+                max-width: 155px;
+                margin-right: 22px;
+            }
+
+            .img {
+                --bs-aspect-ratio: 57.5%;
+                border-radius: 10px;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                overflow: hidden;
+
+                img {
+                    object-fit: cover
+                }
+            }
+        }
+
+        .blog_card_info {
+            display: flex;
+            padding-top: 0;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h4 {
+                font-size: 16px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+
+                @include min(768) {
+                    font-size: 20px;
+                }
+
+                @include min(992) {
+                    font-size: size(20);
+                    -webkit-line-clamp: 2;
+                    margin-bottom: 0;
+                    line-height: 1.5;
+
+                }
+            }
+
+            .arrow {
+                opacity: 0;
+            }
+        }
+
+
+    }
+
+    &_list {
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .blog_card_img {
+            // max-width: 343px;
+            width: 100%;
+            margin-bottom: 18px;
+
+            @include min(576) {
+                max-width: 343px;
+            }
+
+            @include min(992) {
+                max-width: 399px;
+                margin-bottom: 26px;
+
+            }
+
+            .img {
+                --bs-aspect-ratio: 57.5%;
+                border-radius: 10px;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                overflow: hidden;
+
+                img {
+                    object-fit: cover
+                }
+            }
+        }
+
+        .blog_card_info {
+            display: flex;
+            height: 100%;
+            padding-top: 0;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h4 {
+                margin-bottom: 10px;
+
+                @include min(992) {
+                    margin-bottom: 7px;
+                    letter-spacing: 0.0125rem;
+                }
+            }
+        }
+
+        .arrow {
+            right: 4px;
+            bottom: -5px;
+            display: none;
+
+            @include lg {
+                display: block;
+            }
+
+            span {
+                svg {
+                    fill: #000 !important;
+                }
+            }
+        }
+
+
+    }
+
+    &:hover {
+        .blog_card_img {
+            .img {
+                img {
+                    @include lg{
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+    }
+
+    &_img {
+        .img {
+            --bs-aspect-ratio: 58.8%;
+            border-radius: 10px;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+                transform: scale(1);
+                will-change: transform;
+                transition: 0.5s all $ease;
+            }
+        }
+    }
+
+    &_info {
+        padding-top: 14px;
+
+        @include min(992) {
+            padding-top: size(26);
+        }
+
+        h4 {
+            @include lineHeight(20, 30);
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 7px;
+            color: $text-dark;
+            letter-spacing: .1px;
+
+            @include min(992) {
+                font-size: size(20);
+                margin-bottom: 3px;
+                letter-spacing: initial;
+            }
+        }
+
+        time {
+            font-size: 14px;
+            color: #626262;
+            letter-spacing: 0.031rem;
+        }
+    }
+
+    &:hover {
+        @include lg{
+            .arrow {
+                &:global {
+                    &>span>span {
+                        animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+                    }
+                }
+            }
+        }
+    }
+
+    &.blog_detail_card {
+        .blog_card_info {
+            h4 {
+
+                @include min(1200) {
+                    max-width: 317px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .arrow {
+            span {
+                svg {
+                    fill: #000 !important;
+                }
+            }
+        }
+    }
+}
+
+.arrow {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    display: inline-flex;
+    overflow: hidden;
+    opacity: 0;
+
+    span {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+    }
+}

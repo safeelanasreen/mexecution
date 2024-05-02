@@ -1,0 +1,253 @@
+@import "../../../styles/util";
+.asset_modal {
+    //    &:global(.show){
+    //     overflow: hidden;
+    //    }
+    :global {
+        --bs-modal-header-padding: 0;
+        --bs-modal-header-padding-x: 0;
+        --bs-modal-header-padding-y: 0;
+        --bs-modal-header-border-width: 0;
+        --bs-modal-inner-border-radius: 0;
+        --bs-modal-padding: 0;
+
+        .modal-content {
+            position: relative;
+            border-radius: 8px;
+            border: none;
+        }
+        .modal-header {
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            right: 8px;
+            top: 8px;
+            @include min(992) {
+                right: 16px;
+                top: 16px;
+            }
+            .btn-close {
+                width: 25px;
+                height: 25px;
+                padding: 7.5px;
+                margin: 0;
+                opacity: 1;
+                --bs-btn-close-bg: url("/images/close.svg");
+                box-shadow: none !important;
+                filter: invert(1);
+                @include min(768) {
+                    filter: invert(0);
+                }
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .modal-lg {
+            --bs-modal-width: 90%;
+            @include min(1200) {
+                --bs-modal-width: 1139px;
+            }
+        }
+        .button {
+            --btn-background: #ffffff;
+            --btn-color: #000000;
+            --btn-border: #000000;
+            padding: 10px;
+            @include min(1200) {
+                padding: 9px size(35);
+                line-height: 1.88;
+            }
+            &:hover {
+                --btn-border: transparent;
+            }
+        }
+    }
+    &_text {
+        padding: 15px;
+        @include min(768) {
+            width: 40%;
+            // padding:size(20) size(15);
+        }
+
+        @include min(992) {
+            // padding: size(30);
+        }
+        @include min(1200) {
+            max-width: 500px;
+            width: 100%;
+            // padding:size(30) size(67) size(30) size(64);
+        }
+
+        .text_ttl {
+            font-size: size(20);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: size(16);
+            @include min(992) {
+                font-size: size(32);
+            }
+        }
+        .appointment {
+            margin-bottom: size(20);
+            @include min(992) {
+                margin-bottom: size(48);
+            }
+        }
+        p {
+            font-size: 14px;
+
+            line-height: 1.54;
+
+            @include min(992) {
+                font-size: 16px;
+            }
+            &:last-child {
+                font-weight: 500;
+                &:hover {
+                    @include min(1200) {
+                        a {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .asset_modal_text > div {
+        width: 100%;
+    }
+    &_img {
+        // background-image: url(../../../../public/images/state/building.webp);
+
+        // background-repeat: no-repeat;
+        padding: 30px;
+        color: $white;
+        position: relative;
+        background-position: left;
+        overflow: hidden;
+        @include min(768) {
+            width: 60%;
+            // background-size: 200%;
+        }
+        @include min(1200) {
+            padding: size(50);
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: #00000069;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+        .modal_bg_img {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            img {
+                object-fit: cover;
+            }
+        }
+        .asset_modal_logowrap {
+            margin-bottom: size(40);
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 10px;
+
+            @include min(1200) {
+                margin-bottom: size(100);
+            }
+            .motto {
+                // font-size: 16px;
+                font-weight: 500;
+                // font-style: italic;
+                @include min(576) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .logo {
+            --bs-aspect-ratio: 59.5%;
+            overflow: hidden;
+            max-width: 50px;
+            width: 100%;
+
+            img {
+                object-fit: contain;
+            }
+        }
+        .img_text_wrap {
+            margin-bottom: size(40);
+            @include min(1200) {
+                margin-bottom: size(80);
+            }
+        }
+        .left_ttl {
+            font-size: 24px;
+            line-height: 1.25;
+            margin-bottom: size(16);
+            @include min(1200) {
+                font-size: size(35);
+            }
+        }
+        p {
+            font-size: size(16);
+            margin-bottom: 0;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 5;
+            @include min(1200) {
+                max-width: 85%;
+            }
+            .icon_wrap {
+                padding: 0;
+                margin: 0;
+                li {
+                    list-style: none;
+                    span {
+                        margin-left: 8px;
+                        @include min(768) {
+                            margin-left: 13px;
+                        }
+                    }
+                    a {
+                        color: $white;
+                        font-size: 13px;
+                        font-weight: 500;
+                        @include min(992) {
+                            font-size: size(16);
+                        }
+                        &:hover {
+                            @include min(1200) {
+                                span {
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contact_sec {
+            &_top {
+                margin-bottom: 10px;
+                @include min(1200) {
+                    margin-bottom: size(22);
+                }
+            }
+        }
+    }
+    iframe {
+        body {
+            overflow: hidden;
+        }
+    }
+}

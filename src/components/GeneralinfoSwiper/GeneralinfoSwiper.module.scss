@@ -1,0 +1,161 @@
+@import "../../styles/util";
+.swiper_section{
+    position: relative;
+    margin: 0 auto;
+
+    @include min(768){
+        max-width: 85%;
+
+    }
+    @include min(1200){
+        max-width: 85%;
+    }
+    @include min(1400){
+        max-width: 100%;
+    }
+   
+    .slide{
+        @include min(1200){
+            padding: size(90) size(80) size(110) size(80);
+            background-color: #ffffff;
+            border-radius: 11px;
+    
+        }
+        .swiper_wrap{
+            row-gap: 30px;
+        }
+        .content_wrap{
+            @include min(1200){
+                max-width: 80%;
+                width: 100%;
+
+            }
+        }
+        .img_wrap{
+            position: relative;
+            figure{
+                --bs-aspect-ratio:62.10%;
+            }
+        }
+        .ttl{
+            font-size: 18px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            @include min(992){
+                font-size: size(22);
+                margin-bottom: size(40);
+
+            }
+        }
+    }
+        :global{
+            .swiper-button-prev,.swiper-button-next{
+                justify-self: center;
+                &:after{
+                    content: "";
+                    width: 17px;
+                    height: 17px;
+                    font-family: unset;
+                    background-repeat: no-repeat;
+        
+
+                }
+    
+               
+    
+            }
+            .swiper-button-disabled{
+                opacity: .5;
+            }
+        }
+        .nxt,.prev{
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #A6D8D0;
+            background-color: #ffffff;
+            &:after{
+                content: "";
+                width: 17px;
+                height: 15px;
+                font-family: unset;
+                background-repeat: no-repeat;
+                position: absolute;
+                background-image: url("/images/icon/arrow-right.svg")
+    
+
+            }
+           
+        }
+        .prev{
+            &:after{
+               
+                    background-image: url("/images/icon/arrow-left.svg");
+                  }
+            
+        }
+
+        .nxt_btn,.prev_btn{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            @include min(768){
+                display: block;
+            }
+            
+            
+
+        }
+        .nxt_btn{
+            right: -73px;
+        }
+        .prev_btn{
+            left: -73px;
+           
+        }
+    
+}
+
+.enlarge{
+    position: absolute;
+    color: $white;
+    z-index: 5;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: $primary;
+    box-shadow: 0 0 3px 0 rgba(255,255,255,.6);
+    @include min(1200){
+        right: 40px;
+        bottom: 25px;
+    }
+  svg{
+    transition: all 0.25s ease-in-out;
+  }
+        
+
+    &:hover{
+        @include min(1200){
+          svg{
+            transform: scale(1.1);
+          }
+                
+
+  
+        }
+    }
+
+}

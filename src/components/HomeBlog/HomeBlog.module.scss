@@ -1,0 +1,84 @@
+@import "../../styles/util";
+
+.mx_blog_sec {
+    padding: 50px 0 50px 0;
+
+
+    &.bg_light {
+        background: #f5f5f5;
+    }
+
+    // &.theme_2 {
+    //     padding-bottom: 50px;
+
+
+
+
+    //     @include min(992) {
+    //         padding: 0 0 size(101) 0;
+    //     }
+
+    //     h2 {
+    //         padding: 31px 0 0 0;
+    //         letter-spacing: 0.0875rem;
+    //         border-top: 1px solid rgba(112, 112, 112, 0.5);
+
+
+    //         @include min(992) {
+    //             padding: size(94) 0 0 0;
+    //             letter-spacing: initial;
+    //         }
+    //     }
+
+    // }
+
+
+    @include min(992) {
+        padding: size(90) 0 size(98) 0;
+    }
+
+    :global {
+
+        .row {
+            @include min(992) {
+                --bs-gutter-x: 4.6111rem;
+            }
+        }
+
+    }
+
+    h2 {
+        margin-bottom: 0;
+
+    }
+
+    :global {
+        .swiper {
+            // overflow: initial;
+        }
+    }
+}
+
+
+
+.head_wrap {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include min(992) {
+        margin-bottom: size(38);
+    }
+
+    :global {
+        .btn {
+            color: hsl(0, 0%, 0%);
+
+            span {
+                margin-left:5px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,56 @@
+@import "../../styles/util";
+
+.mx_partners_sec {
+    padding: 50px 0 50px;
+    background-color: #F2FFFD;
+
+    @include min(992) {
+        padding: size(108) 0 size(104);
+    }
+
+    :global {
+        .swiper-slide{
+            height: auto;
+        }
+        .nav-arrow {
+            background-color: transparent;
+            border-color: #00786440 !important;
+        }
+    }
+}
+
+.head_wrap {
+    max-width: 975px;
+    margin-inline: auto;
+    margin-bottom: 32px;
+    text-align: left;
+
+    @include min(992) {
+        margin-bottom: size(53);
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 13px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        font-size: 24px;
+        color: $primary;
+
+        @include min(992) {
+            color: hsl(0, 0%, 0%);
+            margin-bottom: size(13);
+            font-size: size(30);
+        }
+    }
+}
+
+.service_body {
+    .slider_wrap {
+        //   margin-bottom: 39px;
+
+        @include min(992) {
+            margin-bottom: size(39);
+        }
+    }
+}

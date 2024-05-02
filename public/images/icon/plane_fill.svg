@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_23044" data-name="Rectangle 23044" width="23" height="23" transform="translate(-478 -5781)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="plane_fill" transform="translate(478 5781)" clip-path="url(#clip-path)">
+    <path id="Icon_awesome-plane" data-name="Icon awesome-plane" d="M16.122,6.449H12.283L8.753.271A.538.538,0,0,0,8.286,0h-2.2A.537.537,0,0,0,5.57.685L7.216,6.449H3.762L2.311,4.514a.537.537,0,0,0-.43-.215H.538a.537.537,0,0,0-.521.668L1.075,8.6.017,12.23a.537.537,0,0,0,.521.668H1.881a.537.537,0,0,0,.43-.215l1.451-1.935H7.216L5.57,16.511a.537.537,0,0,0,.517.685h2.2a.538.538,0,0,0,.467-.271l3.53-6.178h3.839c1.187,0,3.224-.962,3.224-2.15S17.309,6.449,16.122,6.449Z" transform="translate(-476.173 -5778.098)"/>
+  </g>
+</svg>

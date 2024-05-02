@@ -1,0 +1,95 @@
+@import "../../styles/util";
+
+
+
+.mx_blog_listing {
+    padding: 41px 0px 50px 0px;
+    // min-height: 1417px;
+
+    @include min(576) {
+        min-height: 418px;
+    }
+
+    @include min(768) {
+        min-height: 470px;
+    }
+
+    @include min(992) {
+        padding: size(63) 0px size(101) 0px;
+        min-height: 572px;
+    }
+
+    @include min(1200) {
+        min-height: 580px;
+    }
+
+    @include min(1400) {
+        min-height: 607px;
+    }
+
+    @include min(1600) {
+        min-height: 677px;
+    }
+
+    &.theme_second {
+        .blog_list_title {
+            .h4 {
+                color: $primary;
+
+                @include min(992) {
+                    color: #000;
+                }
+            }
+        }
+
+    }
+}
+
+
+.blog_list_title {
+    margin-bottom: 23px;
+
+    .h4 {
+        font-size: 24px;
+        color: $primary;
+
+        @include min(992) {
+            font-size: size(24);
+            color: black;
+        }
+    }
+
+    @include min(992) {
+        margin-bottom: 31px;
+    }
+}
+
+.list_row {
+
+    &>* {
+
+        @include max(991.98) {
+            width: 50%;
+        }
+
+        @include max(575.98) {
+            width: 100%;
+        }
+    }
+
+    row-gap: 30px;
+
+    @include min(992) {
+        --bs-gutter-x: 84px;
+        row-gap: 58px;
+    }
+}
+
+.btn_wrapper {
+    button {
+        padding: 10px 20px;
+        @include lg {
+            padding: size(10) size(23);
+        }
+    }
+}

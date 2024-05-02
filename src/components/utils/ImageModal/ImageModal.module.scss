@@ -1,0 +1,52 @@
+@import "../../../styles/util";
+.infrastructure_modal{
+    --bs-modal-bg:transparent;
+    --bs-border-width:0;
+    --bs-modal-padding:0;
+    :global{
+        .modal-header
+        {
+            position: relative;
+            margin-bottom: size(20);
+            .btn-close{
+                position: absolute;
+                right: 0;
+                margin: 0;
+                border-radius: 50%;
+                box-shadow: none !important;
+                background-color: #ffffff;
+                padding: 0;
+                width: 35px;
+                height: 35px;
+                opacity: 1;
+                z-index: 2;
+                &:hover{
+                    @include min(1200){
+                        opacity: 0.5;
+                    }
+                }
+                @include min(1200){
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+        .modal-dialog{
+            --bs-modal-width:95%;
+
+            @include min(992){
+                --bs-modal-width:90%;
+
+            }
+            @include min(1200){
+                --bs-modal-width:937px;
+
+            }
+        }
+    }
+    .modal_img{
+        figure{
+            --bs-aspect-ratio:69%;
+        }
+    }
+}

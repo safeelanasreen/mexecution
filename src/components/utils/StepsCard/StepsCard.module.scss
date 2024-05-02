@@ -1,0 +1,93 @@
+@import "../../../styles/util";
+.stepcard{
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding:25px 20px 33px 20px;
+    width: 100%;
+
+    @include min(992){
+        max-width: 415px;
+        @include min(1200){
+         max-width: 500px;
+         padding: size(40) size(50) size(40) size(40);
+
+
+        }
+        @include min(1600){
+            max-width: 603px;
+
+        }
+    }
+    &_content{
+        row-gap: 22px;
+        display: flex;
+        flex-direction: column;
+        
+
+
+        @include min(992){
+            display: flex;
+            flex-direction: row;
+            column-gap: 25px;
+            align-items: center;
+            @include min(1200){
+                column-gap: 35px;
+  
+            }
+    
+
+        }
+    }
+    &_img{
+        width: 100%;
+        @include min(992){
+            max-width: 165px;
+            
+
+        }
+        @include min-max(992,1200){
+            flex: 0 0 35%;
+        }
+        figure{
+            --bs-aspect-ratio:66.88%;
+            border-radius: 5px;
+            overflow: hidden;
+            @include min(992){
+                --bs-aspect-ratio:113%;
+                border-radius: 0;
+  
+            }
+            img{
+                object-fit: cover;
+            }
+        }
+    }
+    &_data{
+        text-align: left;
+        
+        p{
+            font-size: 14px;
+            @include min(1200){
+                font-size: 16px;
+                max-width: 305px;
+                line-height: 1.68;
+      
+            }
+        }
+    }
+    .stepcard_ttl{
+        font-size: 20px;
+        @include min(1200){
+            max-width: 280px;
+
+        }
+        span{
+            display: block;
+            color: #007864;
+        }
+
+    }
+    .responsive_ttl{
+        text-align: left;
+    }
+}

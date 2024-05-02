@@ -1,0 +1,60 @@
+@import "../../../styles/util";
+
+
+.map_wrap {
+    .mex_state {
+        path {
+            // stroke-dasharray: 1000;
+            // stroke-dashoffset: 1000;
+            fill:#0a5d5a;
+        }
+    }
+
+    &:global(.visible) {
+        .mex_state {
+            path {
+                // animation: dash 2s linear forwards;
+            }
+            &:hover {
+                path {
+                    fill: #18CEAF !important;
+                }
+            }
+        }
+    }
+}
+
+.active {
+    path {
+        fill: red;
+    }
+}
+
+.map {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.mex_state {
+    path {
+        transition: 0.3s all ease;
+    }
+
+    &:hover {
+        path {
+            fill: #18CEAF !important;
+        }
+    }
+}
+
+
+// @keyframes dash {
+//     to {
+//         stroke-dashoffset: 0;
+//     }
+// }

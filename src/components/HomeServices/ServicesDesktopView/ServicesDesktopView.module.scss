@@ -1,0 +1,140 @@
+@import "../../../styles/util";
+
+.service {
+  &_head {
+    background-color: #e2fcfc;
+    padding-top: 50px;
+    overflow: hidden;
+
+    @include min(992) {
+      padding-top: size(112);
+    }
+
+    h2 {
+      margin-bottom: 19px;
+    }
+
+    // h2,
+    // p,
+    // button {
+    //   @extend %fade;
+    // }
+
+    p,
+    button {
+      transition-delay: 0.3s;
+    }
+  }
+
+  :global {
+    .swiper-slide {
+      height: auto;
+    }
+  }
+
+  :global {
+
+    .swiper {
+      @include min-max(1200, 1300) {
+        margin: 0px 50px !important;
+        padding: 0;
+      }
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    .nav-arrow {
+      display: none;
+
+      // @include min(1200) {
+      //     display: block !important;
+      // }
+
+      @include min-max(1200, 1300) {
+        --spacing: -20px;
+      }
+    }
+  }
+
+  .nav_wrap {
+    // transform: translateY(50%);
+    // transition: 0.5s all ease;
+    opacity: 1;
+    // transition-delay: 0.6s;
+  }
+
+  &:global(.is-inview) {
+    .service {
+      &_head {
+        text-align: center;
+
+        @include min(992) {
+          text-align: initial;
+        }
+
+        .nav_wrap,
+        h2,
+        p,
+        button {
+          opacity: 1;
+          transform: initial;
+        }
+      }
+
+      &_body {}
+    }
+  }
+
+  &_body {
+    background-color: #dcf4f4;
+    background-size: contain;
+    background-position: top;
+    padding-bottom: 50px;
+    padding-top: 25px;
+
+    @include min(992) {
+      padding-bottom: size(109);
+    }
+  }
+}
+
+.head_wrap {
+
+  max-width: 850px;
+
+  p {
+    max-width: 700px;
+  }
+}
+
+.title_head {
+  margin-bottom: size(38);
+}
+
+.nav_wrap {
+  :global {
+    .nav-link {
+      @include lineHeight(18, 28);
+      --bs-nav-link-padding-y: #{size(24)};
+      --bs-nav-link-padding-x: #{size(40)};
+      --bs-nav-pills-border-radius: 15px 15px 0px 0px;
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #b4eae0;
+      color: #262626;
+      font-weight: 500;
+
+      @include min(1600) {
+        --bs-nav-link-padding-x: #{size(40)};
+      }
+    }
+
+    .row {
+      --bs-gutter-x: 1.6667rem;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import "../../../styles/util";
+.tabcard {
+    padding: 12px 0 16px 0;
+    border-bottom: 1px solid #9e9e9e;
+    column-gap: 16px;
+    color: #000000;
+    @include min(768){
+        padding: size(30) 0;
+        column-gap: 50px;
+
+
+    }
+    &_date_wrap {
+    
+
+        &.mobile_date_wrap{
+        padding-top: 16px;
+            position: relative;
+            max-width: fit-content;
+            &:after {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width:105%;
+                background-color: #007864;
+            }
+        }
+        .month {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.42;
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+            @include min(768){
+                position: relative;
+                font-size: size(24);
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 26px;
+                    background-color: #007864;
+                }
+
+            }
+           
+        }
+        .date {
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 5px;
+            @include min(768){
+                font-size: size(40);
+                margin-right: 0;
+
+            }
+        }
+    }
+    &_img_wrap {
+        max-width: 33.25%;
+        width: 100%;
+        @include min(768){
+            max-width: 277px;
+   
+        }
+        figure {
+            --bs-aspect-ratio: 78%;
+            overflow: hidden;
+            @include min(768){
+                --bs-aspect-ratio: 54.15%;
+ 
+            }
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+    &_venue_wrap {
+        .name {
+            margin-bottom: 6px;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+            @include min(768){
+                font-size: size(24);
+
+            }
+        }
+        .venue {
+            margin-bottom:10px;
+            color: #616161;
+            font-size: 14px;
+            line-height: 1.5;
+            @include min(768){
+                font-size: 16px;
+                margin-bottom: size(16);
+
+
+            }
+            span{
+                margin-right: 12px;
+                svg{
+                    color: #F4B200;
+                }
+            }
+        }
+        .year {
+            margin-bottom: 0;
+            font-size: 13px;
+            line-height: 1.5;
+            @include min(768){
+                font-size: size(18);
+
+            }
+        }
+    }
+}

@@ -1,0 +1,227 @@
+@import "../../styles/util";
+
+.ev_client_home {
+  // --client-bg: #F5F7F6;
+  padding: 50px 0;
+  overflow: hidden;
+  background-color: #f5f7f6;
+
+  @include min(768) {
+    padding: size(66) 0 size(83);
+  }
+
+  .client_body {
+    position: relative;
+
+    @include max(991.98) {
+      margin-bottom: 22px;
+    }
+  }
+
+  :global {
+    .swiper {
+
+      @include min(1200) {
+        &::after {
+          content: '';
+          width: 100px;
+          left: -20px;
+          bottom: 0;
+          position: absolute;
+          z-index: 10;
+          display: block;
+          height: 100%;
+          background: linear-gradient(90deg, rgb(245, 247, 246) 18%, rgb(255 255 255 / 0%));
+
+          @include min(768) {
+            left: -3px;
+          }
+        }
+
+        &::before {
+          content: '';
+          width: 100px;
+          right: -20px;
+          left: auto;
+          rotate: 180deg;
+          bottom: 0;
+          position: absolute;
+          z-index: 10;
+          display: block;
+          height: 100%;
+          background: linear-gradient(90deg, rgb(245, 247, 246) 18%, rgb(255 255 255 / 0%));
+
+          @include min(768) {
+            right: -3px;
+          }
+        }
+
+      }
+
+      &-slide {
+        @include max(991.98) {
+          // max-width: 100px;
+          //   width: 100% !important;
+        }
+      }
+    }
+
+    .nav-arrow {
+      display: none;
+
+      @include lg {
+        display: flex;
+      }
+    }
+  }
+
+  :global {
+
+    .swiper {
+      @include min-max(1200, 1300) {
+        margin: 0px 50px !important;
+        padding: 0;
+      }
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    .nav-arrow {
+      display: none !important;
+
+      // @include min(1200) {
+      //     display: block !important;
+      // }
+
+      // @include min-max(1200, 1300) {
+      //   --spacing: -20px;
+      // }
+    }
+  }
+}
+
+.client_header {
+  h2 {
+    @include lineHeight(28, 42);
+    margin-bottom: 46px;
+    font-size: 28px;
+    color: $primary;
+
+    @include min(992) {
+      @include lineHeight(45, 64);
+      color: #000;
+      margin-bottom: size(75);
+      font-size: size(45);
+    }
+  }
+}
+
+.Client_Swiper {
+  overflow: visible;
+
+  @include min(768) {
+    overflow: hidden;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--client-bg);
+    top: 0;
+    left: -100%;
+    z-index: 2;
+
+    @include min(768) {
+      display: none;
+    }
+  }
+
+  :global {
+    .swiper-slide-active {
+      .slide {
+        figure {
+          img {
+            // -webkit-filter: grayscale(0%);
+            /* Safari 6.0 - 9.0 */
+            // filter: grayscale(0%);
+            // width: fit-content !important;
+            position: relative !important;
+
+            // @media only screen and (-webkit-min-device-pixel-ratio : 1.5),
+            // only screen and (min-device-pixel-ratio : 1.5) {
+            //   width: intrinsic !important;
+            // }
+          }
+        }
+      }
+    }
+
+    .swiper-wrapper {
+      -webkit-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+    }
+  }
+}
+
+.client_swiperslide {
+  height: auto;
+}
+
+.client_slide {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  figure {
+    width: 217px;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    margin-bottom: 0;
+    position: relative;
+
+    img {
+      // width: fit-content !important;
+      position: relative !important;
+
+      // @media only screen and (-webkit-min-device-pixel-ratio : 1.5),
+      // only screen and (min-device-pixel-ratio : 1.5) {
+      //   width: intrinsic !important;
+      // }
+    }
+
+    @include min(768) {
+      height: 70px;
+    }
+
+    @include min(1400) {
+      height: 80px;
+    }
+
+    img {
+      object-position: left;
+      /* Safari 6.0 - 9.0 */
+      transition: all ease 0.3s;
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+
+    }
+  }
+
+  &:hover {
+    figure {
+      img {
+        -webkit-filter: grayscale(0%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(0%);
+      }
+    }
+  }
+}

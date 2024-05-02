@@ -1,0 +1,389 @@
+@import "../../styles/util";
+
+.row1 {
+  @include min(992) {
+    --bs-gutter-x: 50px;
+  }
+
+  @include min-max(1200, 1599.98) {
+    --bs-gutter-x:#{size(60)};
+
+  }
+
+  @include min(1600) {
+    --bs-gutter-x:#{size(85)};
+  }
+
+  :global(.h4) {
+    @include lineHeight(30, 45);
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: $primary;
+
+
+    @include min(992) {
+      font-size: size(30);
+      color: #000;
+
+      span {
+        display: none;
+      }
+
+    }
+  }
+
+  p {
+    @include lineHeight(16, 27);
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+
+    @include min(992) {
+      font-size: size(16);
+    }
+  }
+
+  .col_left {
+    @include min(992) {
+      width: 40%;
+    }
+
+    :global(.h4) {
+      @include lineHeight(30, 45);
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+      text-align: center;
+      // max-width: 300px;
+
+      @include min(576) {
+        max-width: 100%;
+      }
+
+      @include min(992) {
+        text-align: left;
+        max-width: 450px;
+        font-size: size(30);
+        margin-bottom: 0;
+
+      }
+    }
+  }
+
+  .col_right {
+
+    @include min(992) {
+      margin-bottom: 0;
+      width: 60%;
+    }
+
+    p {
+      @include lineHeight(16, 28);
+      font-size: 16px;
+      text-align: left;
+      display: inline;
+
+      @include lg {
+        display: inline;
+      }
+
+      &+h1,
+      &+h2,
+      &+h3,
+      &+h4,
+      &+h5,
+      &+h6,
+      &+ul,
+      &+ol {
+        margin-top: 18px;
+
+        @include lg {
+          margin-top: size(25);
+        }
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 10px;
+      line-height: 1.2;
+
+      @include lg {
+        margin-bottom: 15px;
+      }
+
+      &+p {
+        margin-top: 14px !important;
+
+        @include lg {
+          margin-top: size(21);
+        }
+      }
+    }
+
+    h3 {
+      @include lineHeight(45, 63);
+      font-size: 22px;
+
+      @include min(992) {
+        font-size: size(30);
+      }
+
+    }
+
+    h4 {
+      font-size: 20px;
+
+      @include min(992) {
+        font-size: size(26);
+      }
+
+    }
+
+    h5 {
+      font-size: 18px;
+
+      @include min(992) {
+        font-size: size(24);
+      }
+    }
+
+    h6 {
+      font-size: 16px;
+
+      @include min(992) {
+        font-size: size(22);
+      }
+    }
+  }
+
+}
+
+.widget_card {
+  margin-bottom: 50px;
+  margin-top: 33px;
+
+  @include lg {
+    margin-bottom: 0;
+    margin-top: size(80);
+  }
+
+  &-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+  }
+
+  :global {
+    .row::-webkit-scrollbar {
+      width: 0 !important;
+      display: none;
+    }
+
+    .row {
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      overflow-x: scroll;
+      --bs-gutter-x: 19px;
+      // padding-bottom: 10px;
+
+      @include min(1200) {
+        --bs-gutter-x: 24px;
+        padding: 5px 0;
+        overflow-x: hidden;
+      }
+    }
+
+    .col {
+      max-width: 85vw;
+      min-width: 40vw;
+      scroll-snap-align: start;
+      flex: none;
+
+      @include min(992) {
+        min-width: auto;
+      }
+    }
+  }
+  .supplier_distributer_card_wrap{
+    padding-bottom: 4px;
+    :global{
+      .col{
+        max-width: 70%;
+      }
+    }
+    
+
+  }
+}
+
+.widget_accordion {
+  @include min(992) {
+    display: none;
+  }
+
+  .item {
+    .content {
+      margin-bottom: 32px;
+
+      p {
+        font-size: 14px;
+
+        @include min(992) {
+          font-size: size(16);
+          line-height: 1.67;
+        }
+      }
+    }
+  }
+
+  .acordian_widget_card {
+    :global {
+      .row {
+        --bs-gutter-y: 20px;
+        --bs-gutter-x: 20px;
+
+        @include min(992) {
+          --bs-gutter-x: 31px;
+        }
+      }
+    }
+  }
+
+  :global {
+    .accordion-button {
+      line-height: 1.563;
+
+      &:not(.collapsed) {
+        padding-bottom: 14px;
+      }
+    }
+  }
+}
+
+.mx_service_local {
+  padding: 50px 0 0 0;
+
+  @include min(992) {
+    padding: size(109) 0 size(87);
+    overflow: initial;
+  }
+
+  &.theme_dark {
+    background-color: hsl(0, 0%, 97%);
+
+    @include max(991.98) {
+      background-color: hsl(0, 0%, 100%);
+      padding-bottom: 50px;
+    }
+  }
+
+  &.theme_light {
+    background-color: hsl(0, 0%, 100%);
+
+    .widget_card {
+      margin-top: 0 !important;
+    }
+  }
+
+  &.bg_light {
+    background-color: hsl(0, 0%, 100%) !important;
+
+    :global(.h4) {
+
+      text-align: center !important;
+
+      @include lg {
+        text-align: left !important;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &.add_on {
+    :global(.h4) {
+      text-align: left !important;
+
+      span {
+        display: none !important;
+      }
+    }
+
+  }
+
+  &.project_add_on {
+    :global(.h4) {
+      text-align: left !important;
+    }
+  }
+
+  &.supplier_add_on {
+    :global(.h4) {
+      text-align: left !important;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.link {
+  font-weight: 600;
+  font-size: 16px;
+  color: $primary;
+  text-decoration: none;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  transition: 0.3s all;
+  padding: 0;
+  margin-top: 10px;
+
+  &>span {
+    margin-left: 5px;
+    line-height: 1;
+  }
+
+  span {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+  }
+
+  @include min(992) {
+    font-size: size(16);
+  }
+
+  span {
+    color: $secondary;
+  }
+
+  &:hover {
+    &:global {
+      &>span>span {
+        animation: MoveInitial 0.2s forwards, MoveEnd 0.2s forwards 0.2s;
+      }
+    }
+  }
+}
+.suppliercard_wrap{
+  justify-content: space-between;
+  padding-top: size(60);
+  padding-bottom: size(54);
+  row-gap: 15px;
+  @include min(992){
+    padding-top: size(90);
+    padding-bottom: size(40);
+
+ 
+  }
+
+}

@@ -1,0 +1,510 @@
+@import "../../styles/util";
+
+.mx_location_contact {
+  background-color: #dcf4f3;
+  padding: 50px 0;
+  position: relative;
+
+  &::before {
+    display: none;
+
+    @include lg {
+      display: block;
+    }
+
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/banner/loc_contact_bg.png);
+    background-size: contain;
+    background-position:bottom left;
+    background-repeat: no-repeat;
+    // mix-blend-mode: color-burn;
+    pointer-events: none;
+  }
+
+  // &_bg {
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: 0;
+  //   width: 20.75%;
+  //   display: none;
+
+  //   .img {
+  //     max-width: 397px;
+  //     width: 100%;
+
+  //     :global {
+  //       .ratio {
+  //         --bs-aspect-ratio: 50%;
+  //       }
+  //     }
+  //   }
+
+  //   @include min(992) {
+  //     display: block;
+  //   }
+  // }
+
+  @include min(992) {
+    padding: size(90) 0 size(90);
+  }
+
+  .head_wrap {
+    margin-bottom: 21px;
+
+    h2 {
+      @include lineHeight(40, 60);
+      margin-bottom: 1rem;
+      position: relative;
+      letter-spacing: 0.01em;
+
+      @include min(992) {
+        font-size: size(40);
+        max-width: 573px;
+      }
+
+      strong {
+        color: $primary;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      opacity: 0.84;
+      max-width: 492px;
+    }
+  }
+
+  .contact_wrap {
+    padding-top: 12px;
+
+    .msg_area {
+      label {
+        top: -25px;
+        // font-size: 20px;
+      }
+    }
+
+    textarea {
+      min-height: 92px;
+      padding: 0;
+      margin-top: 30px;
+
+      @include min(992) {
+        min-height: 120px;
+        margin-top: size(16);
+      }
+    }
+
+    :global {
+
+      .form-control,
+      .form-select,
+      label {
+        color: #000;
+        left: -3px;
+
+        @include lg {
+          left: -1px;
+        }
+      }
+
+      .button-secondary {
+        --btn-color: #fff;
+        --btn-background: #000000;
+
+        @include max(575.98) {
+          margin-top: 10px;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      .form-floating .form-select {
+        padding: 16px 0;
+        background-position: center right;
+      }
+
+      .form-floating textarea {
+        height: 90px;
+
+        @include min(992) {
+          height: 120px;
+        }
+      }
+
+
+    }
+
+    label::after {
+      display: none;
+    }
+
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #dcf4f3 inset !important;
+      background-color: #dcf4f3 !important;
+    }
+
+    /* Change the text color of autofill */
+    input:-webkit-autofill {
+      -webkit-text-fill-color: #000000 !important;
+    }
+  }
+
+  :global {
+    .phonenumber {
+      position: relative;
+      padding: 0;
+
+      .form-control::placeholder {
+        color: rgb(0, 0, 0) !important;
+      }
+
+      .iti-flag {
+        min-width: 20px;
+        margin-right: 11px;
+      }
+
+      .flag-container {
+        padding: 10px 0;
+      }
+
+      .selected-flag {
+        display: flex !important;
+        align-items: center !important;
+        // min-width: 105px !important;
+        // max-width: 115px !important;
+        background-color: unset !important;
+        justify-content: unset !important;
+        outline: none;
+        padding: 10px 15px;
+        padding-left: 0;
+        width: 78px;
+
+        .selected-dial-code {
+          user-select: none;
+          pointer-events: none;
+          font-size: 16px;
+          padding-left: 0;
+        }
+
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          content: "";
+        }
+      }
+
+      input[type="tel"] {
+        padding-left: 124px !important;
+        padding: size(19.7) 0;
+
+        @include max(767.98) {
+          font-size: 16px;
+        }
+
+        @include min(1600) {
+          padding: size(20) 0;
+        }
+      }
+
+      .intl-tel-input {
+        width: 100%;
+      }
+
+      .autoPlaceholder {
+        width: 100%;
+      }
+
+      .flag-container {
+        width: 100%;
+      }
+
+      .country-list {
+        width: 100%;
+        max-height: 30vh !important;
+        z-index: 5;
+      }
+
+      @include min(992) {
+        // font-size: size(40);
+        max-width: 573px;
+      }
+
+      strong {
+        color: $primary;
+      }
+
+      .down,
+      .up {
+        &::before {
+          position: absolute;
+          content: "";
+          width: 1px;
+          height: 26px;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          // margin-left: 20px;
+          right: -16px;
+          background-color: rgba(0, 0, 0, .6);
+
+          @include lg {
+            right: -13px;
+          }
+
+          @include min(1200) {
+            right: -18px;
+          }
+        }
+      }
+    }
+  }
+
+  .form_row {
+    position: relative;
+  }
+  .btn_meeting{
+    margin-bottom: size(40);
+    a{
+  
+      max-width: fit-content;
+      position: relative;
+      font-weight: 500;
+      font-size: 18px;
+      text-wrap: nowrap;
+      &:first-child{
+        margin-bottom: 20px;
+      }
+      
+    }
+  }
+}
+
+.select_wrap {
+  :global {
+    .custom-select {
+      &__single-value {}
+
+      &_menu {}
+
+      &_menu-list {}
+
+      &__control {
+        border-radius: 0px;
+        border-color: hsl(0, 0%, 0%);
+        background: none;
+        min-height: initial;
+        border: 0;
+
+        &--is-focused {
+          border-color: hsl(0, 0%, 0%);
+          box-shadow: none;
+        }
+      }
+
+      &__input-container {
+        margin: 0px;
+        // padding-bottom: 6px;
+        // padding-top: 6px;
+        padding: 0;
+
+        @include lg {}
+
+        input {
+          color: #000000;
+
+          ::-webkit-input-placeholder {
+            /* Edge */
+            color: #000000;
+          }
+
+          :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #000000;
+          }
+
+          ::placeholder {
+            color: #000000;
+          }
+        }
+      }
+
+      &__value-container {
+        padding: 0;
+
+        @include lg {}
+
+        .custom-select__placeholder {
+          color: #000000;
+          font-size: 15px;
+          font-weight: 400;
+          margin-left: 0px;
+          margin-right: 0px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+
+          @include min(992) {
+            font-size: size(16);
+          }
+        }
+      }
+
+      &__indicators {
+        position: relative;
+      }
+
+      &__placeholder {}
+
+      &__indicator {
+        color: #000;
+        padding: 0;
+
+        &:hover {
+          color: #000;
+          cursor: pointer;
+        }
+
+        &-separator {
+          display: none;
+        }
+      }
+
+      &__option--is-selected {
+        background-color: $primary;
+      }
+
+      &__menu {
+        z-index: 9;
+        border-radius: 0px;
+        border: 1px solid #eaf0f6;
+        box-shadow: 0px 2px 2px rgb(214 227 240 / 20%);
+        width: auto;
+        min-width: 100%;
+        left: 0;
+        margin-top: 0px;
+      }
+
+      &__option {
+        font-size: 16px;
+        white-space: nowrap;
+        font-weight: 500;
+        padding: 7px 0;
+        color: rgba(0, 0, 0, 0.52);
+        transition: color ease 0.3s;
+        cursor: pointer;
+
+        &:active {
+          background-color: transparent;
+        }
+      }
+
+      &__menu-list {
+        padding: 15px 22px;
+      }
+
+      &__option--is-focused {
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+      }
+
+      &__option--is-selected {
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+      }
+    }
+  }
+
+  &:global {
+    &.form-control {
+      border-bottom: 0.0625rem solid #000000 !important;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
+      border-radius: 0;
+      background-color: transparent;
+
+      @include lg {
+        padding: 13.5px 0;
+      }
+
+      &:not(:placeholder-shown) {
+        padding: 16px 0;
+      }
+
+      &::placeholder {
+        color: red !important;
+      }
+    }
+  }
+
+  &.border_primary {
+    &:global {
+      &.form-control {
+        border-bottom: 0.0625rem solid #a0a0a0 !important;
+      }
+    }
+  }
+}
+
+.success_message {
+  font-size: 16px;
+  color: #007864;
+  position: absolute;
+  bottom: -40px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.success_icon {
+  width: 20px;
+  height: 20px;
+  background: #007864;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+}
+.contact_modes{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  column-gap: 50px;
+
+
+ 
+  li{
+    list-style: none;
+    a{
+      color: $primary;
+      font-size: 15px;
+      span{
+        margin-left: 12px;
+      }
+      &:hover{
+        @include min(1200){
+          opacity: 0.8;
+        }
+      }
+
+    }
+  }
+}

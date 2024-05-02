@@ -1,0 +1,19 @@
+<svg id="Group_88171" data-name="Group 88171" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139.082" height="130.825" viewBox="0 0 139.082 130.825">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_24355" data-name="Rectangle 24355" width="139.082" height="130.825" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_88170" data-name="Group 88170" clip-path="url(#clip-path)">
+    <path id="Path_134269" data-name="Path 134269" d="M17.193,127.5V6.91A4.91,4.91,0,0,1,22.1,2H74.044a4.91,4.91,0,0,1,4.91,4.91V127.5" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+    <path id="Path_134270" data-name="Path 134270" d="M78.954,127.521V54.7a4.91,4.91,0,0,1,4.91-4.91h32.755a4.91,4.91,0,0,1,4.911,4.91v72.82" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+    <path id="Path_134271" data-name="Path 134271" d="M34.037,128.825V89.066a2.881,2.881,0,0,1,3.047-2.681H57.412a2.881,2.881,0,0,1,3.047,2.681v39.759" fill="none" stroke="#007864" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_8" data-name="Line 8" x2="135.082" transform="translate(2 128.825)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_9" data-name="Line 9" x2="24.771" transform="translate(34.532 24.458)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_10" data-name="Line 10" x2="11.802" transform="translate(93.585 70.256)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_11" data-name="Line 11" x2="11.802" transform="translate(93.585 90.733)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_12" data-name="Line 12" x2="11.802" transform="translate(93.585 111.541)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_13" data-name="Line 13" x2="24.771" transform="translate(34.532 45.1)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line id="Line_14" data-name="Line 14" x2="24.771" transform="translate(34.532 66.073)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+  </g>
+</svg>

@@ -1,0 +1,208 @@
+//colors
+
+$primary: #007864;
+$secondary: #FFD800;
+$primary-dark: #0E403E;
+$text-dark: #2f2f2f;
+$green: #107864;
+$green-light: #156F6B;
+
+$yellow-light: #FFDD91;
+$grey: #F7F7F7;
+$grey-dark: #ACACAC;
+$grey-medium: #707070;
+
+
+
+
+$white: #fff;
+$black: #000;
+//fonts
+$primary-font: var(--bs-body-font-family);
+$base-size: 18;
+
+$cubic-line: cubic-bezier(.445, .05, .55, .95);
+// transform .6s 
+$ease: cubic-bezier(.32, .94, .6, 1);
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin min-max($resMin, $resMax) {
+  @media (min-width: ($resMin+px)) and (max-width: ($resMax+px)) {
+    @content;
+  }
+}
+
+@mixin max($res) {
+  @media (max-width: ($res+px)) {
+    @content;
+  }
+}
+
+@mixin min($res) {
+  @media (min-width: ($res+px)) {
+    @content;
+  }
+}
+
+@mixin lineHeight($font, $line) {
+  line-height: calc($line/$font);
+}
+
+
+@mixin lineClamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin aspectRatio($w, $h) {
+  padding-bottom: calc(($h / $w) * 100%);
+  position: relative;
+
+  &>img,
+  &>picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+%noscroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+%fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.75s cubic-bezier(0.38, 0.005, 0.215, 1), opacity 0.75s cubic-bezier(0.38, 0.005, 0.215, 1);
+  transition-duration: 0.5s;
+}
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: relative;
+  width: $circle-size;
+  padding-top: $circle-size;
+  border-radius: 50%;
+  list-style: none;
+
+  >* {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $item-size;
+    height: $item-size;
+    margin: (calc(($item-size / 2) * -1));
+    $angle: (
+      360 / $item-count
+    );
+  $rot: 0;
+
+  @for $i from 1 through $item-count {
+    &:nth-of-type(#{$i}) {
+      transform:
+        rotate($rot * 1deg) translate(calc($circle-size / 2)) rotate($rot * -1deg);
+    }
+
+    $rot: $rot + $angle;
+  }
+}
+}
+
+
+%list {
+  --size: 21px;
+  --spacing: 28px;
+  --background: transparent;
+  @include lineHeight(18, 32);
+  list-style: none;
+  font-weight: normal;
+  font-size: 14px;
+  padding-left: 0;
+  margin-bottom: 45px;
+
+  @include min(992) {
+    --size: 26px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+
+  li {
+    padding-left: var(--spacing);
+    position: relative;
+    margin-bottom: 15px;
+
+    @include min(992) {
+      margin-bottom: 13px;
+    }
+
+    &::before {
+      content: '';
+      width: var(--size);
+      height: var(--size);
+
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      background-image: var(--tick-light);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: var(--background);
+      background-size: 44%;
+    }
+  }
+}

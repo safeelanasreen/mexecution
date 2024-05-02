@@ -1,0 +1,275 @@
+@import "../../../styles/util";
+
+.pin {
+    position: absolute;
+    border-radius: 50%;
+    // background-color: #fff;
+    z-index: 10;
+    perspective: 1000px;
+    cursor: pointer;
+    width: 12px;
+    height: 14px;
+
+    @include min(768) {
+        width: 22px;
+        height: 24px;
+    }
+
+    @include min(992) {
+        width: 22px;
+        height: 32px;
+    }
+
+    .tooltip_wrap {
+        position: relative;
+    }
+
+    :global {
+        .tooltip {
+            opacity: 1 !important;
+            font-size: 10px;
+            white-space: nowrap;
+            top: -5px !important;
+
+            &-inner {
+                padding: 0 5px;
+            }
+
+            &-arrow {
+                display: none;
+            }
+        }
+
+        .pin_left.LocatePin_tooltip_wrap__ltzti {
+
+            @include max(991.98) {
+                left: -35px;
+            }
+        }
+    }
+
+
+    //mexico point
+    &:global {
+        &.all {
+            display: none;
+        }
+    }
+
+
+    @include min(992) {
+        width: 20px;
+    }
+
+    &:global(.active) {
+        svg {
+            // transform: scale(1.2);
+            animation: bounce2 2s ease infinite;
+
+            path {
+                fill: #ffffff !important;
+            }
+
+        }
+
+        .circle {
+            border-color: #ffffff !important;
+        }
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        transition: 0.2s all ease;
+        transform-origin: bottom center;
+
+    }
+
+    &:global(.ports) {
+        --them: rgba(0, 120, 100, 0.4);
+
+        svg path {
+            fill: #03A9F4;
+        }
+
+    }
+
+    &:global(.assets) {
+        --them: rgba(232, 191, 77, 0.4);
+
+        svg path {
+            fill: #E8BE4D;
+        }
+    }
+
+
+    &:global(.manufacturingwarehouses) {
+        --them: rgba(175, 29, 46, 0.4);
+
+        svg path {
+            fill: #AF1D2D;
+        }
+    }
+
+    .box_shadow_ripples {
+        opacity: 0;
+        height: 1px;
+        width: 1px;
+        border-radius: 50%;
+        background-size: cover;
+        position: absolute;
+        box-shadow: 0 0 16px rgb(0 0 0 / 50%);
+        bottom: 6px;
+        left: 6px;
+
+        @include min(992) {
+            bottom: 0px;
+            left: 9px;
+        }
+    }
+
+    .box_shadow_ripples:before {
+        position: absolute;
+        content: "";
+        top: -3px;
+        bottom: -3px;
+        left: -3px;
+        right: -3px;
+        border-radius: 50%;
+        box-shadow: 0 0 var(--them), 0 0 0 4px var(--them),
+            0 0 0 8px var(--them), 0 0 0 12px var(--them);
+        z-index: -1;
+        animation: ripples 1s linear infinite;
+        transition: 0.5s;
+
+        transform: rotateX(59deg);
+    }
+
+    @keyframes ripples {
+        to {
+            box-shadow: 0 0 0 4px var(--them), 0 0 0 8px var(--them),
+                0 0 0 12px var(--them), 0 0 0 16px rgba(0, 0, 0, 0);
+        }
+    }
+
+
+    @keyframes bounce2 {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-15px);
+        }
+
+        60% {
+            transform: translateY(-7px);
+        }
+    }
+
+}
+
+.ripple {
+    // position: absolute;
+
+    &:global(.ports) {
+        .circle {
+            border-color: #03A9F4;
+        }
+    }
+
+    &:global(.assets) {
+        .circle {
+            border-color: #ffba00;
+        }
+    }
+
+    &:global(.manufacturingwarehouses) {
+        .circle {
+            border-color: #AF1D2D;
+        }
+    }
+
+}
+
+.circles {
+    height: 10px;
+    position: relative;
+    width: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    left: 1px;
+    top: -10px;
+
+    @include min(768) {
+        left: 6px;
+        top: -5px;
+    }
+
+    @include lg {
+        left: 5px;
+        top: -7px;
+    }
+
+    // overflow: hidden;
+
+
+    .circle {
+        animation: growAndFade 1s infinite both ease-in;
+        background-color: red;
+        border-radius: 50%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+        border: 45px solid red;
+        position: absolute;
+        width: 100%;
+
+        @include lg {
+            border: 50px solid red;
+        }
+
+        &:nth-child(1) {
+            // border-color: #fff !important;
+        }
+    }
+
+    @keyframes growAndFade {
+        0% {
+            opacity: .5;
+            transform: scale(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(.3);
+        }
+    }
+
+    @for $i from 1 through 4 {
+        .circle:nth-child(#{$i}) {
+            animation-delay: ($i) * (0.3s) !important;
+        }
+    }
+
+    // .circle:nth-child(1){
+    //     animation-delay: .3s !important;
+    // }
+    // .circle:nth-child(2){
+    //     animation-delay: .6s !important;
+    // }
+    // .circle:nth-child(3){
+    //     animation-delay: .9s !important;
+    // }
+    // .circle:nth-child(4){
+    //     animation-delay: 1.2s !important;
+    // }
+}

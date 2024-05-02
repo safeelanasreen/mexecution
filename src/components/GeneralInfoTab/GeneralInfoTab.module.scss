@@ -1,0 +1,53 @@
+@import "../../styles/util";
+.tab_section {
+    padding:25px 0 50px 0;
+    @include min(768){
+        padding:size(35) 0 size(70) 0;
+
+    }
+    @include min(1200){
+        padding: size(60) 0 size(100) 0;
+
+    }
+    background-color: #f5f7f6;
+    .tab_wrap {
+        :global {
+            .nav-tabs {
+                --bs-border-width: 0;
+                --bs-nav-tabs-link-active-bg:#FED800;
+                --bs-nav-tabs-link-active-color:#000000;
+                --bs-nav-link-color:#000000;
+                margin-bottom: 30px;
+                gap: 10px;
+                @include min(768){
+                    margin-bottom: size(48);
+
+                }
+                @include min(1200){
+                    justify-content: center;
+                    column-gap: 28px;
+                    --bs-nav-tabs-link-active-color:#ffffff;
+                    --bs-nav-tabs-link-active-bg: #107864;
+
+
+                }
+                .nav-item {
+                    .nav-link {
+                        padding: size(10) size(30);
+                        border-radius: 28px;
+                        border: 1px solid #ccc;
+                        font-size: 14px;
+                        font-weight: 500;
+                        @include min(768){
+                            font-size: 16px;
+
+                        }
+                        &.active{
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

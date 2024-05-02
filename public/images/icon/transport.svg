@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_24068" data-name="Rectangle 24068" width="43" height="43" transform="translate(317 1688)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_24078" data-name="Rectangle 24078" width="34.456" height="39.023" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="Rectangle_24077" data-name="Rectangle 24077" width="34.455" height="26.447" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_67595" data-name="Mask Group 67595" transform="translate(-317 -1688)" clip-path="url(#clip-path)">
+    <g id="Group_72138" data-name="Group 72138" transform="translate(321.272 1689.988)">
+      <g id="Group_72142" data-name="Group 72142">
+        <g id="Group_72141" data-name="Group 72141" clip-path="url(#clip-path-2)">
+          <g id="Group_72140" data-name="Group 72140" transform="translate(0 12.576)" style="isolation: isolate">
+            <g id="Group_72139" data-name="Group 72139">
+              <g id="Group_72138-2" data-name="Group 72138" clip-path="url(#clip-path-3)">
+                <path id="Path_117702" data-name="Path 117702" d="M28.009,37.258H6.314l-5.1-17.93L17.164,13l15.95,6.328Z" transform="translate(0.066 -11.865)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <line id="Line_1137" data-name="Line 1137" y2="14.766" transform="translate(17.272 13.711)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_117703" data-name="Path 117703" d="M5.293,17.547V7H28.583V17.547" transform="translate(0.289 0.383)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <g id="Group_72144" data-name="Group 72144">
+        <g id="Group_72143" data-name="Group 72143" clip-path="url(#clip-path-2)">
+          <path id="Path_117704" data-name="Path 117704" d="M11.334,7.328V1H21.881V7.328" transform="translate(0.62 0.055)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

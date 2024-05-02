@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="64" viewBox="0 0 89 64">
+  <g id="Group_71791" data-name="Group 71791" transform="translate(-1344 -5512.725)">
+    <path id="Rectangle_23775" data-name="Rectangle 23775" d="M1,1V42H61V1H1M0,0H62V43H0Z" transform="translate(1358 5512.725)"/>
+    <rect id="Rectangle_23777" data-name="Rectangle 23777" width="14" height="43" transform="translate(1382 5512.725)" fill="#f7f7f7"/>
+    <path id="Rectangle_23777_-_Outline" data-name="Rectangle 23777 - Outline" d="M1,1V42H13V1H1M0,0H14V43H0Z" transform="translate(1382 5512.725)"/>
+    <rect id="Rectangle_23774" data-name="Rectangle 23774" width="89" height="22" rx="11" transform="translate(1344 5554.725)" fill="#fed800"/>
+    <path id="Rectangle_23774_-_Outline" data-name="Rectangle 23774 - Outline" d="M11,1a10,10,0,0,0,0,20H78A10,10,0,0,0,78,1H11m0-1H78a11,11,0,0,1,0,22H11A11,11,0,0,1,11,0Z" transform="translate(1344 5554.725)"/>
+    <circle id="Ellipse_27778" data-name="Ellipse 27778" cx="4.5" cy="4.5" r="4.5" transform="translate(1358 5561.725)"/>
+    <path id="Ellipse_27778_-_Outline" data-name="Ellipse 27778 - Outline" d="M4.5,1A3.5,3.5,0,1,0,8,4.5,3.5,3.5,0,0,0,4.5,1m0-1A4.5,4.5,0,1,1,0,4.5,4.5,4.5,0,0,1,4.5,0Z" transform="translate(1358 5561.725)"/>
+    <circle id="Ellipse_27779" data-name="Ellipse 27779" cx="4.5" cy="4.5" r="4.5" transform="translate(1384 5561.725)"/>
+    <path id="Ellipse_27779_-_Outline" data-name="Ellipse 27779 - Outline" d="M4.5,1A3.5,3.5,0,1,0,8,4.5,3.5,3.5,0,0,0,4.5,1m0-1A4.5,4.5,0,1,1,0,4.5,4.5,4.5,0,0,1,4.5,0Z" transform="translate(1384 5561.725)"/>
+    <ellipse id="Ellipse_27780" data-name="Ellipse 27780" cx="5" cy="4.5" rx="5" ry="4.5" transform="translate(1410 5561.725)"/>
+    <path id="Ellipse_27780_-_Outline" data-name="Ellipse 27780 - Outline" d="M5,1A3.779,3.779,0,0,0,1,4.5,3.779,3.779,0,0,0,5,8,3.779,3.779,0,0,0,9,4.5,3.779,3.779,0,0,0,5,1M5,0a4.77,4.77,0,0,1,5,4.5A4.77,4.77,0,0,1,5,9,4.77,4.77,0,0,1,0,4.5,4.77,4.77,0,0,1,5,0Z" transform="translate(1410 5561.725)"/>
+  </g>
+</svg>

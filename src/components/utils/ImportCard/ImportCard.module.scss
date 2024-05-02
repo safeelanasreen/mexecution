@@ -1,0 +1,21 @@
+@import "../../../styles/util";
+
+.import_card{
+    padding: 50px 0;
+    &_img{
+        max-width: 552px;
+        figure{
+            border-radius: 12px;
+            --bs-aspect-ratio:68.65%
+        }
+    }
+    &_content{
+        @include min(1200){
+            max-width: 712px;
+            margin-left: auto;
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@import "../../../styles/util";
+.strategy_card_modal{
+    :global{
+        .modal-content{
+            position: relative;
+            border: none;
+            
+        }
+        .modal-body{
+            padding: size(42) size(32) size(91) size(42);
+
+        }
+        .modal-header{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            --bs-modal-header-border-width:0;
+            --bs-modal-header-padding-x: 0;
+            --bs-modal-header-padding-y: 0;
+            --bs-modal-header-padding:0;
+            right: size(32);
+            top: size(42);
+            z-index: 1;
+            top: 0;
+            right: 15px;
+            @include min(768){
+                right: size(32);
+                top: size(42);
+            }
+            .btn-close{
+                width: 25px;
+                height: 25px;
+                padding: 7.5px;
+                opacity: 1;
+                margin: 0;
+               
+                --bs-btn-close-bg: url("/images/close.svg");
+                box-shadow: none !important;
+                &:hover{
+                    opacity: 0.5;
+
+                }
+            }
+        }
+        .modal-dialog{
+         
+            @include min(768){
+                --bs-modal-width:768px;
+            }
+            @include min(1200){
+                --bs-modal-width:931px;
+            }
+        }
+    }
+    .modal_wrap{
+   
+        width: 100%;
+        column-gap: size(36);
+        row-gap: 30px;
+    }
+    .img_area{
+       
+        max-width: 336px;
+        width: 100%;
+        figure{
+            --bs-aspect-ratio:59.82%;
+            overflow: hidden;
+            img{
+                object-fit: cover;
+            }
+        }
+    }
+    .text_area_wrap{
+        .text_area{
+            @include min(768){
+                max-width: 369px;
+                width: 100%;
+            }
+            
+            .content_wrap{
+                max-height: 280px;
+                overflow-y: auto;
+                padding-right: 15px;
+                p{
+                    font-size: 14px;
+                    @include min(1600){
+                        font-size: 16px;
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+
+                    }
+                }
+            }
+        }
+     .text_ttl{
+        font-size: size(24);
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+     }
+    }
+   
+}

@@ -1,0 +1,82 @@
+@import "../../styles/util";
+.mob_accordion_wrap {
+    :global {
+        .accordion {
+            --bs-accordion-color: #000000;
+            --bs-accordion-active-color: #000000;
+            --bs-accordion-btn-padding-x: 0;
+            --bs-accordion-btn-padding-y: 16px;
+            --bs-accordion-active-bg: #ffffff;
+            --bs-accordion-border-radius: 0;
+            --bs-accordion-inner-border-radius: 0;
+            --bs-accordion-body-padding-x: 0;
+            --bs-accordion-body-padding-y: 20px;
+            &-button {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.5;
+                border: none;
+                border-top-left-radius: 0;
+                box-shadow: none !important;
+                align-items: baseline;
+                &::after {
+                    background-image: url(../../../public/images/state-page/icons/plus-black.svg);
+                }
+                &:not(.collapsed) {
+                    &::after {
+                        background-image: url(../../../public/images/state-page/icons/minus-black.svg);
+                    }
+                }
+            }
+            &-item {
+                border: none;
+                border-bottom: 1px solid #ababab;
+            }
+            &-body {
+                border-top: 2px solid #107864;
+                font-size: 14px;
+                padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x) 30px
+                    var(--bs-accordion-body-padding-x);
+            }
+        }
+    }
+    .figure_wrap {
+        figure {
+            margin-bottom: 20px;
+            --bs-aspect-ratio: 56.26%;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+    }
+    .text_wrap {
+        margin-bottom: 24px;
+    }
+    .list_wrap {
+        ul {
+            padding-left: 0;
+            margin-bottom: 0;
+            li {
+                font-size: 14px;
+                line-height: 27px;
+                margin-bottom: 16px;
+                list-style: none;
+                position: relative;
+                padding-left: 30px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 10px;
+                    width: 13px;
+                    height: 10px;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='10' viewBox='0 0 13 10' fill='none'%3E%3Cpath d='M1 3.68049L4.56524 7L11 1' stroke='%23007864' stroke-width='2'/%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+  
+}

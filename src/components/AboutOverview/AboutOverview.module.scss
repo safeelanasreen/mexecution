@@ -1,0 +1,215 @@
+@import "../../styles/util";
+
+
+.mx_about_overview {
+    padding: 51px 0px 60px 0px;
+
+    @include min(992) {
+        padding: size(69) 0px size(128) 0px;
+    }
+}
+
+
+
+.static_row {
+    @include max(991.98) {
+        --bs-gutter-y: 32px;
+    }
+
+    @include lg {
+        justify-content: space-between !important;
+    }
+}
+
+.overview_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        @include lineHeight(16, 28);
+        margin-bottom: 47px;
+        text-align: center;
+        font-size: 16px;
+
+        @include min(992) {
+            @include lineHeight(16, 28);
+            font-size: size(16);
+            margin-bottom: 68px;
+            // max-width: 667px;
+            max-width: 1250px;
+        }
+    }
+
+
+}
+
+.overview_head {
+    margin-bottom: 14px;
+    font-size: 24px;
+    color: $primary;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+
+    @include min(992) {
+        color: #000;
+        margin-bottom: 14px;
+        font-size: size(30);
+        line-height: 1.43;
+    }
+}
+
+
+
+.statics {
+    position: relative;
+    margin-bottom: 32px;
+
+    @include min(768) {
+        margin-bottom: 0;
+    }
+
+    @include min(992) {
+        margin-bottom: 0;
+        width: fit-content;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: -6px;
+            width: 1px;
+            height: 60px;
+            background: #DEDEDE;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include min(1200) {
+                right: -38px;
+            }
+
+            @include min(1600) {
+                right: -52px;
+            }
+
+        }
+
+    }
+
+    // @include min(1200) {
+    //     padding: 0 size(31);
+    //     // justify-content: center;
+    // }
+
+    // @include min(1600) {
+    //     padding: 0 size(31);
+
+    // }
+
+    &:nth-last-child(-n+2) {
+        @include max(767.98) {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+
+
+
+    &:first-of-type {
+        @include min(1200) {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+        }
+
+    }
+
+
+
+    &:last-of-type {
+        @include min(1200) {
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    sup {
+        font-size: 23px;
+        color: $primary;
+
+        @include min(992) {
+            font-size: size(39);
+        }
+    }
+
+    &_item {
+        flex: 0 0 auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        flex-direction: column;
+
+        // &:last-child {
+        //     @include min(1200) {
+        //         &::before {
+        //             display: none;
+        //         }
+        //     }
+        // }
+
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     right: 0;
+        //     width: 1px;
+        //     height: 60px;
+        //     background: #DEDEDE;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+
+        // }
+
+
+
+        @include min(992) {
+            flex-direction: row;
+        }
+
+        span {
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 0px;
+            line-height: 1.4;
+
+            @include min(992) {
+                font-size: size(55);
+            }
+        }
+
+        p {
+            // @include lineHeight(16, 24);
+            margin-bottom: 0;
+            margin-top: 7px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.4;
+
+
+            @include min(992) {
+                margin-top: 0;
+                font-size: size(15);
+                padding-left: size(18);
+                line-height: 1.7;
+            }
+
+            @include min(1200) {
+                text-align: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import "../../../styles/util";
+
+.service_card {
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px 25px 17px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include min(1600) {
+    padding: size(38) size(26) size(31) size(26);
+  }
+
+  &_head {
+    h6 {
+      font-weight: 700;
+      color: #dee4e6;
+      font-size: 54px;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+  }
+
+  &_body {
+    flex: 1 0;
+
+    .content_wrap {
+      // max-height: 215px;
+      // overflow-y: auto;
+      ul{
+        padding-left: 20px;
+      }
+    }
+
+    h4 {
+      @include lineHeight(15, 22);
+      font-weight: 600;
+      font-size: 16px;
+      color: $text-dark;
+      
+      @include min(992) {
+        @include lineHeight(16, 27);
+        font-size: size(16);
+      }
+    }
+
+    p,
+    li {
+      @include lineHeight(16, 29);
+      font-size: 16px;
+      color: $text-dark;
+
+      @include min(992) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  &_footer {
+    padding-top: 20px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: $primary;
+      text-decoration: none;
+      transition: 0.2s ease;
+
+      span {
+        color: #E8BE4D;
+        margin-right: 10px;
+        font-size: 22px;
+        transition: 0.3s ease-in-out;
+      }
+      &:hover {
+        span {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

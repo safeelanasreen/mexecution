@@ -1,0 +1,342 @@
+@import "../../styles/util";
+
+.mx_featured_location {
+  padding: 50px 0;
+
+  @include min(992) {
+    padding: size(76) 0 size(80);
+  }
+
+  .row_main {
+    @include min(992) {
+      --bs-gutter-x: 9.6rem;
+    }
+  }
+
+  :global {
+    .btn-link {
+      padding: 0;
+      // display: block;
+      width: fit-content;
+    }
+  }
+}
+
+.col_left {
+  flex: 0 0 auto;
+  width: 100%;
+
+  @include min(992) {
+    width: 35%;
+  }
+
+  .img_wrap {
+    --bs-aspect-ratio: 60%;
+    overflow: hidden;
+    border-radius: 15px;
+
+    // margin-bottom: 32px;
+    img {
+      border-radius: 13px;
+      transition: 0.5s all ease;
+      transform: scale(1);
+    }
+
+    &:hover img {
+      transform: scale(1.09);
+    }
+  }
+}
+
+.col_right {
+  flex: 0 0 auto;
+  width: 100%;
+
+  @include min(992) {
+    width: 58.7%;
+  }
+
+  .content_wrap {
+    position: relative;
+
+    @include min(992) {
+      padding-top: 32px;
+    }
+
+    .seal {
+      position: absolute;
+      border-radius: 50%;
+      top: -5%;
+      right: 0;
+      z-index: 1;
+      opacity: 43%;
+      width: 100%;
+      max-width: 120px;
+      display: none;
+
+      @include min(1200) {
+        display: block;
+      }
+
+      @include min(1400) {
+        right: 0;
+      }
+
+      @include min(1600) {
+        max-width: 154px;
+        top: -17%;
+        // top: -10%;
+      }
+
+      :global {
+        .ratio {
+          --bs-aspect-ratio: 100%;
+        }
+      }
+
+      .tooltip_wrap {
+        opacity: 0;
+        display: none;
+        transition: opacity 0.3s ease;
+        position: absolute;
+        top: -25%;
+        left: -190%;
+        pointer-events: none;
+
+        @include min(1200) {
+          display: block;
+        }
+
+        @include min(1400) {
+          left: auto;
+          right: -190%;
+          top: -10%;
+        }
+
+        @include min(1600) {
+          top: 10%;
+          right: -156%;
+        }
+
+        :global {
+          .tooltip {
+            position: relative;
+            opacity: 1;
+            --bs-tooltip-max-width: 200px;
+            --bs-tooltip-color: #000;
+            --bs-tooltip-bg: #fff;
+            --bs-tooltip-border-radius: 15px;
+            --bs-tooltip-font-size: 11px;
+            font-family: $primary-font;
+
+            .tooltip-arrow {
+              position: absolute;
+              left: 94%;
+              top: 50%;
+              transform: translate(-50%, -50%) rotate(180deg);
+              width: 30px;
+              height: 33px;
+
+              @include min(1400) {
+                top: 50%;
+                left: 13px;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                height: 33px;
+              }
+
+              &::before {
+                left: -30px;
+                width: 30px;
+                height: 30px;
+                border-width: 20px;
+              }
+            }
+
+            .tooltip-inner {
+              box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+              padding: size(19) size(11) size(19) size(32);
+              text-align: left;
+              font-size: 11px;
+              line-height: 1.3;
+
+              @include min(1400) {
+                line-height: initial;
+              }
+
+              ul {
+                padding-left: 0;
+                margin-bottom: 0;
+
+                li::marker {
+                  color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .tooltip_wrap {
+          opacity: 1;
+        }
+      }
+    }
+
+    p {
+      @include min(992) {
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  p {
+    @include min(992) {
+      max-width: 711px;
+    }
+  }
+
+  .link {
+    font-weight: 600;
+    font-size: 16px;
+    color: $primary;
+    text-decoration: none;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    transition: 0.3s all;
+    padding: 4px 0;
+    margin-top: 10px;
+
+    & > span {
+      margin-left: 5px;
+      line-height: 1;
+    }
+
+    span {
+      overflow: hidden;
+      display: flex;
+      position: relative;
+    }
+
+    @include min(992) {
+      font-size: size(16);
+    }
+
+    span {
+      color: $secondary;
+    }
+
+    &:hover {
+      &:global {
+        & > span > span {
+          animation: MoveInitial 0.2s forwards, MoveEnd 0.2s forwards 0.2s;
+        }
+      }
+    }
+  }
+}
+
+.mx_listing_location {
+  padding-bottom: 50px;
+  min-height: 442px;
+  padding-top: 15px;
+
+  @include min(992) {
+    padding-bottom: size(64);
+    padding-top: 0;
+  }
+
+  h6 {
+    @include min(992) {
+      margin-bottom: size(22);
+    }
+  }
+
+  .custom_select {
+    word-wrap: normal;
+    border: 0;
+    color: #000;
+    border-bottom: 2px solid #707070;
+    width: 100%;
+    padding: 0 0 12px 0;
+    margin-bottom: 28px;
+    font-size: 16px;
+    background-color: #fff;
+    margin-top: 21px;
+    background-image: url(/images/icon/down_arrow_yelow.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+
+    // transform: rotate(90deg);
+    // transform-origin: center;
+    &:focus {
+      outline: none;
+    }
+
+    // @include min(576) {
+    //     font-size: 16px;
+    // }
+  }
+
+  .btn_wrapper {
+    margin-top: 45px;
+
+    :global(.btn) {
+      --bs-btn-color: #007864;
+      --bs-btn-border-color: #007864;
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: #007864;
+
+      --bs-btn-hover-border-color: #007864;
+
+      @include lg {
+        margin-top: size(86);
+        padding: size(10) size(23);
+      }
+    }
+  }
+}
+
+.listing_shimmer {
+  h6 {
+    @include min(992) {
+      margin: size(22) 0;
+    }
+  }
+
+  :global(.row) {
+    --bs-gutter-y: 20px;
+
+    @include min(992) {
+      --bs-gutter-y: 1.6111rem;
+    }
+  }
+}
+
+.placeholder {
+  border-radius: 13px;
+  width: fit-content;
+  min-height: 1em;
+  color: #e9e9e9 !important;
+  vertical-align: middle;
+  cursor: wait;
+  background-color: #e9e9e9;
+  opacity: 0.5;
+  animation: placeholder-glow 2s ease-in-out infinite;
+
+  &_img {
+    background-color: #e9e9e9;
+  }
+}
+
+@keyframes placeholder-glow {
+  50% {
+    opacity: 0.2;
+  }
+}

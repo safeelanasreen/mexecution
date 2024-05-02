@@ -1,0 +1,40 @@
+@import "../../../styles/util";
+
+
+.mx_no_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 0 0;
+
+    @include min(992) {
+        padding: size(66) 0 0 0;
+    }
+
+    .img {
+        width: 50px;
+        height: 65px;
+        position: relative;
+        margin-bottom: size(35);
+
+        @include lg {
+            width: size(65);
+            height: size(75);
+        }
+    }
+
+    h4 {
+        margin-bottom: 10px;
+
+        @include min(992) {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        font-size: 17px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+}

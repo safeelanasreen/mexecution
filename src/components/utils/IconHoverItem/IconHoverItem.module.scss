@@ -1,0 +1,112 @@
+@import "../../../styles/util";
+
+.item {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    padding: 31px 0;
+    position: relative;
+
+    @include min(992) {
+        padding: size(40) 0;
+        padding-right: size(15);
+    }
+    &:hover {
+        .arrow {
+            &:global {
+                &>span>span {
+                    animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+                }
+            }
+        }
+    }
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        background: #e3e3e3;
+    }
+
+    &::after {
+        z-index: 1;
+        height: 2px;
+        background-color: $primary;
+        transform: scaleX(0);
+        transition-duration: 0.8s;
+        transition-timing-function: cubic-bezier(.32, .94, .6, 1);
+        transition-property: transform, opacity;
+        transform-origin: left;
+    }
+
+    &:hover {
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &_body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    &_img {
+        flex: 0 0 auto;
+        width: auto;
+
+        .icon {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            @include min(992) {
+                width: 43px;
+                height: 43px;
+            }
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    &_info {
+        padding-left: 25px;
+        padding-right: 14px;
+        flex: 1 0;
+        @include min(992) {
+            padding-left: size(45);
+        }
+
+        h4 {
+            @include lineHeight(22, 39);
+            font-weight: 500;
+            font-size: 16px;
+            color: $text-dark;
+
+            @include min(992) {
+                font-size: size(22);
+            }
+        }
+    }
+}
+
+.arrow {
+  
+    display: inline-flex;
+    overflow: hidden;
+    flex: 0 0 auto;
+    width: auto;
+    color: #000;
+    span {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+    }
+
+    // &>span>span {}
+}

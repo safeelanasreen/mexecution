@@ -1,0 +1,163 @@
+@import "../../styles/util";
+.section{
+    padding: 50px 0;
+    @include min(768){
+        padding: size(70) 0;
+
+    }
+    @include min(1200){
+        padding: size(110) 0;
+   
+    }
+    &_ttl_wrap{
+
+        margin: 0 auto;
+        padding-bottom: 30px;
+        @include min(768){
+            padding-bottom: 40px;
+        }
+        @include min(1200){
+            max-width: 74%;
+            padding-bottom: size(80);
+
+
+        }
+    }
+    &_ttl{
+        margin-bottom: 20px;
+    }
+.tab_wrap{
+    margin-bottom: size(70);
+    :global{
+        .nav-pills{
+            --bs-nav-pills-link-active-color:#000000;
+            --bs-nav-pills-link-active-bg:transparent;
+            --bs-nav-link-color:#000000;
+            --bs-nav-pills-border-radius:0;
+        }
+        .nav-link{
+            padding: 16px 0 16px 0;
+            font-weight: 500;
+            font-size: 16px;
+            border-bottom: 2px solid #ABABAB;
+            @include min(992){
+                font-size: size(22);
+                padding: size(27) 0 size(30) 0;
+
+
+            }
+            &.active{
+                border-bottom: 2px solid #107864;
+            }
+           
+        }
+        .nav-item{
+            &:first-child{
+                .nav-link{
+                    padding-top: 0;
+                }
+            }
+        }
+        .tab-content{
+            @include min(1200){
+                max-width: 711px;
+                margin-left: auto;
+            }
+          
+            .tab-pane{
+                figure{
+                    --bs-aspect-ratio:56.39%;
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    border-radius: 11px;
+                    @include min(992){
+                        margin-bottom: size(50);
+  
+                    }
+                }
+            }
+            .content_p{
+                margin-bottom: size(24);
+            }
+            .tab_content{
+                max-width: 89.2%;
+                margin: 0 auto;
+            }
+            ul{
+                margin-bottom: 0;
+                padding-left: 0;
+                li{
+                    font-size: 14px;
+                    list-style: none;
+                    line-height: 1.87;
+                    position: relative;
+                    padding-left: 33px;
+                    margin-bottom: 13px;
+                    @include min(992){
+                        font-size: 16px;
+                        margin-bottom: size(20);
+
+                    }
+                    &:after{
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        top: 10px;
+                        width: 13px;
+                        height: 10px;
+                        background-repeat: no-repeat;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='10' viewBox='0 0 13 10' fill='none'%3E%3Cg clip-path='url(%23clip0_78_1911)'%3E%3Cpath d='M0.707031 3.94727L4.72559 7.95996L11.9785 0.707031' stroke='%23007864' stroke-width='2'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_78_1911'%3E%3Crect width='12.686' height='9.374' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+                    }
+
+                }
+            }
+        }
+    }
+}
+&_bottom{
+    margin: 0 auto;
+    border-radius: 11px;
+    background: #F4F8F8;
+    overflow: hidden;
+    padding: 24px 16px;
+    max-width: max-content;
+    margin-top: 30px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+    @include min(992){
+        flex-wrap: nowrap;
+        margin-top: 0;
+        column-gap: size(46);
+        padding: size(40) size(73);
+
+
+    }
+    .universities{
+        @include max(991.98){
+            width: 50%;
+
+        }
+    }
+   
+    &_ttl{
+        font-size: 28px;
+        font-weight: 600;
+        color:#107864;
+        margin-bottom: 16px;
+        line-height: 1.1;
+        @include min(992){
+            font-size: size(32);
+
+        }
+    }
+    p{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+        @include min(992){
+            font-size: 18px;
+
+        }
+    }
+}
+}

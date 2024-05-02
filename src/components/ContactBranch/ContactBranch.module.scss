@@ -1,0 +1,130 @@
+@import "../../styles/util";
+
+.mx_contact_branch {
+    padding: 50px 0;
+    background: #F5F5F5;
+    position: relative;
+
+
+    @include min(1200) {
+        padding: size(112) 0 size(153) 0;
+    }
+
+
+    .branch_wrapper {
+        .branch_row {
+            flex-direction: column;
+
+            --bs-gutter-y: 20px;
+
+            @include min(1200) {
+                flex-direction: row;
+                --bs-gutter-x: #{size(275)};
+            }
+            @include min(1600) {
+                flex-direction: row;
+                --bs-gutter-x: #{size(295)};
+            }
+        }
+    }
+
+    .col_left {
+
+        @include min(1200) {
+            width: 40.7%;
+            margin-bottom: 0;
+        }
+
+        :global {
+            .h2 {
+                letter-spacing: -0.06875rem;
+                margin-bottom: 18px;
+
+                @include min(1200) {
+                    @include lineHeight(45, 55);
+                    font-size: size(45);
+                    margin-bottom: size(32);
+                }
+            }
+
+            p {
+                margin-bottom: 10px;
+
+                @include min(1200) {
+                    @include lineHeight(16, 27);
+                    font-size: size(16);
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .col_right {
+
+        .map_wrap {
+            width: 100%;
+            margin-top: 10px;
+
+            iframe {
+                width: 100%;
+                min-height: 229px;
+            }
+        }
+
+        @include min(1200) {
+            width: 59.3%;
+        }
+
+        :global {
+            .h4 {
+                margin-bottom: 21px;
+                font-size: 20px;
+
+                @include min(1200) {
+                    font-size: size(30);
+                    margin-bottom: size(29);
+                }
+            }
+
+        }
+
+        .branch_card {
+            :global {
+                .row {
+                    --bs-gutter-y: 20px
+                }
+            }
+
+            .card_wrap {
+                @include max(1199.98) {
+                    display: flex;
+                    flex-direction: column
+                }
+            }
+
+        }
+    }
+
+    .bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 20.75%;
+        display: none;
+
+        .img {
+            max-width: 397px;
+            width: 100%;
+
+            :global {
+                .ratio {
+                    --bs-aspect-ratio: 50%;
+                }
+            }
+        }
+
+        @include min(1200) {
+            display: block;
+        }
+    }
+}

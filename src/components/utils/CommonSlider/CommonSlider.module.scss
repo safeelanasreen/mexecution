@@ -1,0 +1,89 @@
+@import "../../../styles/util";
+
+.slider_nav {
+    :global {
+        .nav-arrow {
+            transition: 0.3s all ease;
+            opacity: 1;
+            transform: scale(1);
+            will-change: transform;
+
+            svg {
+                transition: .3s ease-in-out;
+
+                path {
+                    fill: black !important;
+                }
+            }
+
+            // &:hover {
+            //     svg {
+
+            //         path {
+            //             transition: .3s ease-in-out;
+
+            //             &:first-child {
+            //                 fill: white !important;
+            //                 stroke: white;
+            //             }
+            //         }
+            //     }
+            // }
+        }
+        
+    }
+
+    &:global(.no_nav) {
+        :global {
+            .nav-arrow {
+                opacity: 0;
+                pointer-events: none;
+                transform: scale(0.8);
+            }
+
+        }
+    }
+
+    &:global(.is_begin) {
+        :global {
+            .nav-arrow-left {
+                opacity: .5;
+                pointer-events: none;
+            }
+
+        }
+    }
+
+    &:global(.is_end) {
+        :global {
+            .nav-arrow-right {
+                opacity: .5;
+                pointer-events: none;
+            }
+        }
+
+    }
+}
+
+// .commonslider_wrap {
+//     padding: 0;
+//     margin-bottom: 30px;
+
+//     @include lg {
+//         padding: size(12) size(65);
+//     }
+
+//     &:global {
+//         &.no_nav {
+//             padding: 0;
+//         }
+//     }
+// }
+
+.slider_nav_wrap {
+    display: none;
+}
+
+.common_wrap{
+    // display: none;
+}

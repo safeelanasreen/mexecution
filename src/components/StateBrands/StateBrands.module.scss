@@ -1,0 +1,57 @@
+@import "../../styles/util";
+.brands{
+    padding: 50px 0;
+    @include min(768){
+        padding: size(70) 0;
+
+    }
+    @include min(1200){
+        padding: size(110) 0;
+
+    }
+    &_ttl_wrap{
+        margin-bottom: 33px;
+        @include min(1200){
+            margin-bottom: size(73);
+
+        }
+
+        
+
+    }
+    .logo_wrap{
+      
+        row-gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+        @include max(767.98){
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        @include min(1200){
+            column-gap: size(110);
+            justify-content: center;
+        }
+
+            .figure_wrap{
+            @include max(767.98){
+                
+                    max-width: 42%;
+                    width: 100%;
+                    figure{
+                        width: fit-content;
+                        margin: 0 auto;
+                    }
+                }
+            }
+      
+    }
+    &_mainttl{
+        margin-bottom: 20px;
+        @include min(1200){
+            margin-bottom: size(15);
+        }
+    }
+
+}

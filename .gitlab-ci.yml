@@ -1,0 +1,75 @@
+stages:
+  - deploy
+variables:
+  SSH_CLONE_URL: "git@gitlab.webandcrafts.com:webandcrafts-lead/wac122022-0088-mexpansion-ui-next-react.git"
+  PROJECT: "mexpansion"
+  STAGE_BUILD_PATH: "/home/appuser/mexpansion/source"
+  PM2_JOB_STAGE: "mexpansion-website"
+  PM2_PORT_STAGE: "7000"
+  PROD_BUILD_PATH: "/home/mexecution/frontend"
+  PM2_JOB_PROD: "mexecution"
+  PM2_PORT_PROD: "3000"
+
+stage-deploy:
+  stage: deploy
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_STAGE_KEY" > ~/.ssh/$PROJECT
+    - ssh-keyscan $SSH_STAGE_SERVER >> ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/$PROJECT
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh -i ~/.ssh/$PROJECT -o "StrictHostKeyChecking no" $SSH_STAGE_USER@$SSH_STAGE_SERVER "
+      source ~/.profile;
+      if [ ! -d $STAGE_BUILD_PATH ]; then
+      git clone $SSH_CLONE_URL $STAGE_BUILD_PATH -b $CI_COMMIT_BRANCH;
+      cd $STAGE_BUILD_PATH;
+      else
+      cd $STAGE_BUILD_PATH;
+      git pull;
+      git checkout $CI_COMMIT_BRANCH;
+      git pull;
+      fi && npm install -f && npm run build"
+    - ssh -i ~/.ssh/$PROJECT -o "StrictHostKeyChecking no" $SSH_STAGE_USER@$SSH_STAGE_SERVER "
+      cd $STAGE_BUILD_PATH;
+      if ! pm2 list | grep -q '$PM2_JOB_STAGE'; then
+      pm2 start npm --name '$PM2_JOB_STAGE' -- run start -- --port=$PM2_PORT_STAGE;
+      else
+      pm2 restart $PM2_JOB_STAGE;
+      fi"
+  environment:
+    name: Staging Enviroment
+  only:
+    - /^staging\/([^\s]+)/
+
+production-deploy:
+  stage: deploy
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PROD_KEY" > ~/.ssh/$PROJECT
+    - ssh-keyscan $SSH_PROD_SERVER >> ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/$PROJECT
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh -i ~/.ssh/$PROJECT -o "StrictHostKeyChecking no" $SSH_PROD_USER@$SSH_PROD_SERVER "
+      source ~/.profile;
+      if [ ! -d $PROD_BUILD_PATH ]; then
+      git clone $SSH_CLONE_URL $PROD_BUILD_PATH -b $CI_COMMIT_BRANCH;
+      cd $PROD_BUILD_PATH;
+      else
+      cd $PROD_BUILD_PATH;
+      git pull;
+      git checkout $CI_COMMIT_BRANCH;
+      git pull;
+      fi && npm install -f && npm run build"
+    - ssh -i ~/.ssh/$PROJECT -o "StrictHostKeyChecking no" $SSH_PROD_USER@$SSH_PROD_SERVER "
+      cd $PROD_BUILD_PATH;
+      if ! pm2 list | grep -q '$PM2_JOB_PROD'; then
+      pm2 start npm --name '$PM2_JOB_PROD' -- run start -- --port=$PM2_PORT_PROD;
+      else
+      pm2 restart $PM2_JOB_PROD;
+      fi"
+  environment:
+    name: Production Enviroment
+  only:
+    - /^live\/([^\s]+)/

@@ -1,0 +1,107 @@
+@import "../../styles/util";
+.section{
+    background: #F5F7F6;
+    padding: 50px 0 25px 0  ;
+    position: relative;
+    @include min(768){
+        padding: size(70) 0 size(35) 0;
+    }
+    @include min(1200){
+        padding: size(110) 0 size(60) 0;
+
+    }
+    &:after{
+        display: none;
+        content: "";
+        position: absolute;
+        right: -15%;
+        top: -32%;
+        width: 525px;
+        height: 525px;
+        border-radius: 525px;
+background: radial-gradient(46.14% 48.29% at 50% 50%, rgba(16, 120, 100, 0.81) 0%, rgba(16, 120, 100, 0.00) 100%);
+@include min(1200){
+    display: block;
+}
+    }
+    
+    .ttl_wrap{
+        margin-bottom: 16px;
+        @include min(768){
+            text-align: center;
+            margin-bottom: size(35);
+
+
+        }
+
+    }
+    .text_wrap{
+       margin-bottom:30px;
+       @include min(768){
+        max-width:67%;
+        margin: 0 auto;
+        text-align: center;
+        @include min(1200){
+            margin-bottom: size(70);
+
+        }
+ 
+       }
+    }
+    .infocard_wrap{
+        column-gap: 16px;
+       margin-bottom:0;
+       overflow-x: auto;
+       @include max(575.98){
+        width: calc( 100% + 16px);
+
+       }
+      
+      
+
+        
+       margin-bottom: 16px;
+        &:last-child{
+        margin-bottom: 0;
+        }
+        @include min(1200){
+            column-gap: size(50);
+            justify-content: unset;
+          margin-bottom: size(30);
+   
+        }
+        .card_item{
+            @include max(991.98){
+              flex: 0 0 232px;
+            }
+           
+
+            @include min(992){
+                flex: 0 0 30.5%;
+
+            }
+          
+        }
+        :global{
+            .card-item:nth-child(2n){
+              
+              
+                    .infocardeven{
+                        background-color: #0E403E;
+                    }
+
+                }
+            
+
+            }
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+            }
+    }
+    .info_container{
+        @include min(1600){
+            max-width: 1243px;
+        }
+    }
+}

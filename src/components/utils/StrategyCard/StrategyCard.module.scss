@@ -1,0 +1,83 @@
+@import "../../../styles/util";
+.strategy_card {
+    width: 100%;
+    @include min(768){
+        max-width: 48%;
+    }
+    @include min(992){
+        max-width: 32%;
+    }
+  
+    &_img {
+        figure {
+            --bs-aspect-ratio: 59.77%;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: size(22);
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+    &_content {
+        max-width: 92%;
+        width: 100%;
+        &_ttl {
+            margin-bottom: 10px;
+            font-size: size(20);
+            @include min(768){
+                margin-bottom: size(16);
+   
+            }
+        }
+        .description {
+            p {
+                color: #212529;
+
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                margin-bottom: 20px;
+                @include min(992){
+                    margin-bottom: size(30);
+
+                }
+              
+            }
+        }
+    }
+    &_link{
+        font-size: 14px;
+        font-weight: 600;
+        column-gap: 12px;
+        color :#007864;
+        cursor: pointer;
+        @include min(992){
+            font-size: 16px;
+        } 
+        @include min(1200){
+            max-width: fit-content;
+        }
+        span{
+            svg{
+                transition: transform 0.2s ease-in;
+            }
+        }
+      
+     
+            &:hover{
+                @include min(1200){
+                    span{
+                        svg{
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+            }
+
+        
+    }
+}

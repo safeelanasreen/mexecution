@@ -1,0 +1,50 @@
+@import "../../styles/util";
+.strategy_sec{
+    padding: 50px 0;
+    @include min(768){
+        padding: size(70) 0 ;
+
+    }
+    @include min(1200){
+        padding: size(110) 0 size(130) 0;
+
+    }
+    &_ttl{
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 1.5;
+        @include min(768){
+            font-size: size(28);
+        }
+        @include min(992){
+            text-align: center;
+
+        }
+        @include min(1200){
+            font-size: size(40);
+            margin-bottom: size(40);
+
+
+        }
+    }
+    &_content{
+        
+        margin-bottom: 30px;
+        @include min(992){
+            text-align: center;
+            margin-bottom: size(63);
+
+        }
+    }
+    &_top{
+        @include min(1600){
+            max-width: 85%;
+            margin: 0 auto;
+        }
+    }
+    &_bottom{
+        display: flex;
+        column-gap: size(30);
+        row-gap: 40px;
+    }
+}

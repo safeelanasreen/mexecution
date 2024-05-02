@@ -1,0 +1,48 @@
+@import "../../../styles/util";
+
+.link {
+    font-weight: 600;
+    font-size: 16px;
+    color: $primary;
+    text-decoration: none;
+    display: inline-flex;
+    overflow: hidden;
+    align-items: center;
+    transition: 0.3s all;
+    padding: 4px 0;
+
+    &>span {
+        margin-left:5px;
+        line-height: 1;
+    }
+
+    span {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+
+    }
+
+    @include min(992) {
+        font-size: size(16);
+    }
+
+    span {
+        color: $secondary;
+    }
+
+    &:hover {
+        color: #007864 !important;
+
+        @include lg {
+            color: #000;
+        }
+
+        // &:global {
+        //     &>span>span {
+        //         animation: MoveInitial 0.2s forwards, MoveEnd 0.2s forwards 0.2s;
+        //     }
+        // }
+    }
+
+}

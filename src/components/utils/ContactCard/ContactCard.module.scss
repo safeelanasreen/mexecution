@@ -1,0 +1,101 @@
+@import "../../../styles/util";
+
+.contact_card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 26px 26px 26px 26px;
+  background: #fff;
+  flex: 1 0;
+  transition: 0.3s all ease;
+  transform: translateY(0);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+  @include min(768) {
+    height: 100%;
+  }
+
+  @include min(992) {
+    border-radius: 8px;
+    padding: size(35) size(33) size(35) size(35);
+  }
+
+  &_head {
+    position: relative;
+    margin-bottom: 36px;
+
+    @include min(992) {
+      margin-bottom: size(52);
+    }
+
+    .icon {
+      position: relative;
+      width: 45px;
+      height: 25px;
+
+      @include min(992) {
+        width: 60px;
+        height: 35px;
+      }
+    }
+
+    img {
+      object-fit: contain;
+      object-position: left;
+    }
+  }
+
+  &_body {
+    flex: 1 0;
+
+    h4 {
+      font-weight: 500;
+      margin-bottom: 17px;
+      line-height: 1.45;
+      font-size: 18px;
+
+      @include min(992) {
+        font-size: size(22);
+        margin-bottom: size(18);
+      }
+    }
+
+    address {
+      font-size: 15px;
+
+      @include min(992) {
+        margin-bottom: 26px;
+        font-size: size(16);
+      }
+
+      @include min(992) {
+        line-height: 1.57;
+      }
+    }
+  }
+
+  &_footer {
+    display: none;
+
+    a {
+      transition: 0.3s ease-in-out;
+      &:hover {
+        color: black;
+      }
+    }
+
+    @include min(992) {
+      display: block;
+    }
+
+    .map {
+      text-decoration: underline;
+
+      @include min(992) {
+        font-size: size(16);
+      }
+    }
+  }
+}

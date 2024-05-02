@@ -1,0 +1,88 @@
+@import "../../styles/util";
+
+.mx_location_brands {
+    background-color: #ffffff;
+    padding: 50px 0 25px 0;
+
+    @include min(992) {
+        padding: size(114) 0 size(102);
+    }
+
+    :global {
+        .row {
+            @include min(992) {
+                --bs-gutter-x: 86px;
+            }
+        }
+    }
+
+    .head_wrap {
+        margin-bottom: 32px;
+
+        @include min(992) {
+            margin-bottom: size(43);
+            max-width: 684px;
+        }
+
+        h2 {
+            color: $primary;
+            margin-bottom: 12px;
+            font-size: 22px;
+            text-align: center;
+            line-height: 1.35;
+
+            // @include min(768) {
+            //     margin-bottom: size(82);
+
+            // }
+
+            @include min(1200) {
+                line-height: initial;
+                color: black;
+                text-align: left;
+                font-size: size(30);
+                max-width: 552px;
+                line-height: 1.6;
+            }
+        }
+
+
+    }
+
+    .location_companies {
+        &_item {
+            // max-width: 174px;
+            margin: auto;
+            // @include min(992){
+            //   max-width: 88px;
+            // }
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    .card_wrapper {
+        position: relative;
+        transition: all .3s ease;
+
+        @include min(1200) {
+            padding-block: size(43);
+
+            &:hover {
+                // box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
+                transform: translateY(-5px);
+            }
+        }
+
+        // &::after{
+        //     position: absolute;
+        //     content: '';
+        //     width: 100%;
+        //     height: 100%;
+        //     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        //     top: 0;
+        // }
+    }
+}

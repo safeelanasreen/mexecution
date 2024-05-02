@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="39.553" height="39.553" viewBox="0 0 39.553 39.553">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_23541" data-name="Rectangle 23541" width="39.553" height="39.553" transform="translate(1389 529)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_67441" data-name="Mask Group 67441" transform="translate(-1389 -529)" clip-path="url(#clip-path)">
+    <g id="Group_71422" data-name="Group 71422" transform="translate(1390.966 531.83)">
+      <path id="Rectangle_23539" data-name="Rectangle 23539" d="M2-1H32.294a3,3,0,0,1,3,3V28.643a3,3,0,0,1-3,3H2a3,3,0,0,1-3-3V2A3,3,0,0,1,2-1ZM32.294,29.643a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2A1,1,0,0,0,1,2V28.643a1,1,0,0,0,1,1Z" transform="translate(0.793 2.858)"/>
+      <rect id="Rectangle_23540" data-name="Rectangle 23540" width="4.458" height="5.716" transform="translate(6.367)" fill="#fff"/>
+      <path id="Rectangle_23540_-_Outline" data-name="Rectangle 23540 - Outline" d="M0-1H4.458a1,1,0,0,1,1,1V5.716a1,1,0,0,1-1,1H0a1,1,0,0,1-1-1V0A1,1,0,0,1,0-1ZM3.458,1H1V4.716H3.458Z" transform="translate(6.367)"/>
+      <rect id="Rectangle_23542" data-name="Rectangle 23542" width="4.458" height="5.716" transform="translate(25.307)" fill="#fff"/>
+      <path id="Rectangle_23542_-_Outline" data-name="Rectangle 23542 - Outline" d="M0-1H4.458a1,1,0,0,1,1,1V5.716a1,1,0,0,1-1,1H0a1,1,0,0,1-1-1V0A1,1,0,0,1,0-1ZM3.458,1H1V4.716H3.458Z" transform="translate(25.307)"/>
+      <path id="Path_116487" data-name="Path 116487" d="M6.681,5.681h-2V1H0V-1H6.681Z" transform="translate(22.92 16.313)"/>
+      <path id="Path_116488" data-name="Path 116488" d="M34.355,1H0V-1H34.355Z" transform="translate(0 9.863)"/>
+      <path id="Path_116486" data-name="Path 116486" d="M2.057,5,.693,3.541l9.393-8.76L14.448-.355l7.57-6.9,1.347,1.478L14.3,2.482,9.958-2.366Z" transform="translate(5.626 23.097)"/>
+    </g>
+  </g>
+</svg>

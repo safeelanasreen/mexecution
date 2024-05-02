@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="79" viewBox="0 0 66 79">
+  <g id="Group_71793" data-name="Group 71793" transform="translate(-656 -5482.713)">
+    <g id="Group_71792" data-name="Group 71792" transform="translate(656 5482.85)">
+      <path id="Rectangle_23772" data-name="Rectangle 23772" d="M33,0h0A33,33,0,0,1,66,33v1a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V33A33,33,0,0,1,33,0Z" transform="translate(0 -0.136)" fill="#fed800"/>
+      <path id="Rectangle_23772_-_Outline" data-name="Rectangle 23772 - Outline" d="M33,1A31.973,31.973,0,0,0,1,33H65A31.973,31.973,0,0,0,33,1m0-1A33,33,0,0,1,66,33v1H0V33A33,33,0,0,1,33,0Z" transform="translate(0 -0.136)"/>
+      <path id="Rectangle_23773" data-name="Rectangle 23773" d="M1,1V45H65V1H1M0,0H66V46H0Z" transform="translate(0 32.864)"/>
+      <path id="Icon_feather-star" data-name="Icon feather-star" d="M13.25,3l3.167,6.416L23.5,10.452l-5.125,4.992L19.584,22.5,13.25,19.164,6.915,22.5l1.209-7.052L3,10.452l7.083-1.035Z" transform="translate(19.55 44.522)" fill="#fed800"/>
+      <path id="Icon_feather-star_-_Outline" data-name="Icon feather-star - Outline" d="M13.25,2.5a.5.5,0,0,1,.448.279L16.749,8.96l6.823,1a.5.5,0,0,1,.277.853l-4.937,4.808,1.165,6.793a.5.5,0,0,1-.726.527l-6.1-3.209-6.1,3.209a.5.5,0,0,1-.726-.527l1.165-6.793L2.651,10.81a.5.5,0,0,1,.277-.853l6.823-1L12.8,2.779A.5.5,0,0,1,13.25,2.5Zm9.176,8.3-6.081-.889a.5.5,0,0,1-.376-.273L13.25,4.13,10.531,9.638a.5.5,0,0,1-.376.273L4.074,10.8l4.4,4.285a.5.5,0,0,1,.144.443L7.58,21.581l5.438-2.86a.5.5,0,0,1,.465,0l5.438,2.86-1.038-6.053a.5.5,0,0,1,.144-.443Z" transform="translate(19.55 44.522)"/>
+      <rect id="Rectangle_23778" data-name="Rectangle 23778" width="66" height="7" transform="translate(0 32.864)"/>
+      <path id="Rectangle_23778_-_Outline" data-name="Rectangle 23778 - Outline" d="M1,1V6H65V1H1M0,0H66V7H0Z" transform="translate(0 32.864)"/>
+    </g>
+  </g>
+</svg>

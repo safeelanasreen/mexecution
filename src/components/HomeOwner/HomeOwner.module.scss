@@ -1,0 +1,262 @@
+@import "../../styles/util";
+
+.imagecomponent {
+    --sec-p: 50px;
+
+    @include max(991) {
+        padding: var(--sec-p) 0;
+    }
+
+
+    position: relative;
+    overflow: hidden;
+    background-color: #107864;
+
+    .left_content {
+        width: 100%;
+        height: 100%;
+        max-width: 500px;
+        border-radius: 15px;
+        overflow: hidden;
+
+        @include lg {
+            border-radius: 0;
+            width: 97.7%;
+            max-width: 100%;
+        }
+
+        :global(.ratio) {
+
+            @include max(991) {
+                --bs-aspect-ratio: 71.7%;
+
+            }
+
+            @include min(1600) {
+                --bs-aspect-ratio: 71.7%;
+            }
+        }
+
+        figure {
+
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+
+    .wrap {
+        position: relative;
+        z-index: 1;
+
+        .right_content {
+
+            // position: relative;
+            // height: 100%;
+            // padding: 40px 0;
+
+            // @include min(768) {
+            //     padding: size(40) 0 size(40) size(20);
+
+            // }
+
+            // @include min(992) {
+            //     padding: size(40) 0 size(40) size(25);
+
+            // }
+
+            // @include min(1200) {
+            //     padding: size(98) 0 size(98) size(98);
+
+            // }
+        }
+
+        .content {
+            // @include min(768) {
+            //     max-width: 90%;
+            // }
+
+            // @include min(992) {
+            //     max-width: 80%;
+
+            // }
+            position: relative;
+
+            @include min(992) {
+                margin-left: size(60);
+                padding: size(50) 0;
+            }
+
+            @include min(1200) {
+                max-width: size(606);
+
+            }
+
+            .ttl_wrap {
+                margin-bottom: 20px;
+
+                @include min(1200) {
+                    margin-bottom: size(32);
+
+                }
+            }
+        }
+
+        .btn_wrap {
+            column-gap: size(20);
+        }
+    }
+
+    .logo_component {
+        position: absolute;
+        right: 0;
+        // height: 584px;
+        pointer-events: none;
+        z-index: 0;
+
+        @include max(1199.98) {
+            width: 35%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @include max(767.98) {
+            margin-left: 16px;
+            margin-right: 16px;
+            width: 90%;
+            // height: 500px;
+            bottom: 50px;
+        }
+
+        @include min(1200) {
+            width: 40%;
+        }
+
+        :global(.ratio) {
+            --bs-aspect-ratio: 100%;
+
+            @include min(1200) {
+                --bs-aspect-ratio: 80%;
+            }
+        }
+
+        figure {
+            // --bs-aspect-ratio: 65%;
+            overflow: hidden;
+
+        }
+    }
+
+    .list_ttl {
+        margin-bottom: size(18);
+        font-size: size(22);
+    }
+
+    .list_wrap {
+        color: #ffffff;
+
+        ul {
+            padding-left: 0;
+            margin-bottom: 0;
+
+            li {
+                font-size: size(18);
+                margin-bottom: 16px;
+                list-style: none;
+                position: relative;
+
+                &::before {
+                    background-color: #ffdd91;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    :global {
+        .list-star {
+            margin-bottom: 30px;
+
+            @include min(1200) {
+                margin-bottom: size(40);
+            }
+        }
+
+        .button {
+            --btn-color: #000000 !important;
+            --btn-background: #ffffff !important;
+
+            &:hover {
+                @include min(1200) {
+                    color: #000000 !important;
+                    background-color: #ffffff !important;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+
+.right_content_ttl {
+    line-height: 1.2;
+
+    @include lg {
+        font-size: size(40);
+    }
+}
+
+.list_wrap {
+    ul {
+        li {
+            line-height: 1.6;
+
+            &::before {
+                background-image: var(--tick-green);
+                background-size: 45%;
+            }
+
+            @include lg {
+                padding-left: size(50);
+                margin-bottom: size(14);
+            }
+        }
+    }
+}
+
+.btn_wrap {
+    :global(.button) {
+        min-width: auto;
+
+        @include min(1200) {
+            padding: size(15) size(64);
+        }
+    }
+}
+
+.sm_logo_component {
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    z-index: -1;
+    width: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include min(768) {
+        max-width: 500px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    :global(.ratio) {
+        --bs-aspect-ratio: 80%;
+    }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="43" viewBox="0 0 43 43">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_23622" data-name="Rectangle 23622" width="43" height="43" transform="translate(1684 932)" fill="none" stroke="#000" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_67456" data-name="Mask Group 67456" transform="translate(-1684 -932)" clip-path="url(#clip-path)">
+    <g id="Icon_feather-settings" data-name="Icon feather-settings" transform="translate(1685.432 933.432)">
+      <path id="Path_117261" data-name="Path 117261" d="M24.762,19.131A5.631,5.631,0,1,1,19.131,13.5,5.631,5.631,0,0,1,24.762,19.131Z" transform="translate(0.937 0.937)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_117262" data-name="Path 117262" d="M32.56,25.132a2.785,2.785,0,0,0,.557,3.072l.1.1a3.378,3.378,0,1,1-4.777,4.777l-.1-.1a2.808,2.808,0,0,0-4.76,1.992v.287a3.376,3.376,0,1,1-6.752,0v-.152A2.785,2.785,0,0,0,15,32.56a2.785,2.785,0,0,0-3.072.557l-.1.1a3.378,3.378,0,1,1-4.777-4.777l.1-.1a2.808,2.808,0,0,0-1.992-4.76H4.876a3.376,3.376,0,1,1,0-6.752h.152A2.785,2.785,0,0,0,7.577,15a2.785,2.785,0,0,0-.557-3.072l-.1-.1A3.378,3.378,0,1,1,11.7,7.054l.1.1a2.785,2.785,0,0,0,3.072.557H15a2.785,2.785,0,0,0,1.688-2.549V4.876a3.376,3.376,0,0,1,6.752,0v.152A2.808,2.808,0,0,0,28.2,7.02l.1-.1A3.378,3.378,0,1,1,33.083,11.7l-.1.1a2.785,2.785,0,0,0-.557,3.072V15a2.785,2.785,0,0,0,2.549,1.688h.287a3.376,3.376,0,1,1,0,6.752h-.152a2.785,2.785,0,0,0-2.549,1.688Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

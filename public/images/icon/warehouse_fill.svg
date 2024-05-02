@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_22620" data-name="Rectangle 22620" width="23" height="23" transform="translate(278 229)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="warehouse_fill" transform="translate(-278 -229)" clip-path="url(#clip-path)">
+    <g id="Group_69854" data-name="Group 69854" transform="translate(83.593 18.846)">
+      <path id="Icon_awesome-warehouse" data-name="Icon awesome-warehouse" d="M15.983,9.482H5.813a.254.254,0,0,0-.261.244l0,2.323a.254.254,0,0,0,.261.244H15.983a.254.254,0,0,0,.261-.244V9.725A.254.254,0,0,0,15.983,9.482Zm0,4.646H5.8a.254.254,0,0,0-.261.244l0,2.323a.254.254,0,0,0,.261.244H15.983a.254.254,0,0,0,.261-.244V14.371A.254.254,0,0,0,15.983,14.128Z" transform="translate(194.93 213.02)"/>
+      <path id="Icon_awesome-warehouse-2" data-name="Icon awesome-warehouse" d="M20.081,4.333l-8.95-4.2a1.421,1.421,0,0,0-1.214,0L.97,4.333A1.8,1.8,0,0,0,0,5.973V18.663a.282.282,0,0,0,.263.3H2.895a.282.282,0,0,0,.263-.3V9.48A1.135,1.135,0,0,1,4.23,8.3H16.821A1.135,1.135,0,0,1,17.894,9.48v9.183a.282.282,0,0,0,.263.3h2.631a.282.282,0,0,0,.263-.3V5.973A1.8,1.8,0,0,0,20.081,4.333Z" transform="translate(195.295 211)"/>
+    </g>
+  </g>
+</svg>

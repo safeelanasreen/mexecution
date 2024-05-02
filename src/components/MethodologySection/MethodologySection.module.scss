@@ -1,0 +1,92 @@
+@import "../../styles/util";
+.methodology {
+    padding: 55px 0;
+    position: relative;
+    overflow: hidden;
+    @include min(1200) {
+        padding: size(125) 0 size(112) 0;
+    }
+   &:global{
+    &.visible{
+        .shape{
+            transform: translateX(0);
+
+        }
+       
+    }
+   }
+    &_shape{
+        position: absolute;
+        max-width: 457px;
+        width: 100%;
+        right: 0;
+        top: 0;
+        transition: transform 0.5s cubic-bezier(.43,.08,.41,.78);
+        transform: translateX(100px) ;
+       
+        figure{
+            --bs-aspect-ratio:112%;
+        }
+       
+    }
+    &_contentarea {
+        max-width: 698px;
+        p {
+            font-size: 16px;
+        }
+    }
+    &_right {
+        .img_section {
+            max-width: 526px;
+            margin-left: auto;
+        }
+        figure {
+            --bs-aspect-ratio: 121%;
+        }
+    }
+    &_accordion {
+        margin-top: size(43);
+    }
+    :global {
+        .accordion {
+            &-item {
+                margin-bottom: 12px;
+            }
+            --bs-accordion-btn-focus-box-shadow: 0;
+            --bs-accordion-btn-padding-x: 18px;
+            --bs-accordion-btn-padding-y: 15px;
+            --bs-accordion-active-bg: #f2f8f7;
+            --bs-accordion-btn-bg: #f2f8f7;
+            --bs-accordion-inner-border-radius: 6px;
+            --bs-accordion-btn-focus-border-color: #f2f8f7;
+            --bs-border-radius: 6px;
+            --bs-border-color: transparent;
+            --bs-border-width: 0;
+            --bs-accordion-body-padding-x: 18px;
+            --bs-accordion-btn-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="13.09" height="7.294" viewBox="0 0 13.09 7.294"><path id="Path_113657" data-name="Path 113657" d="M15306.718,616.5l2.057,2.056,3.428,3.427,4.113-4.113,1.371-1.371" transform="translate(-15305.657 -615.439)" fill="none" stroke="%23007864" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>');
+            --bs-accordion-btn-active-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="13.09" height="7.294" viewBox="0 0 13.09 7.294"><path id="Path_113657" data-name="Path 113657" d="M15306.718,616.5l2.057,2.056,3.428,3.427,4.113-4.113,1.371-1.371" transform="translate(-15305.657 -615.439)" fill="none" stroke="%23007864" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>');
+            --bs-accordion-btn-icon-width:15px;
+            &-button {
+                font-size: 14px;
+                border-radius: 6px;
+                @include min(768) {
+                    font-size: 16px;
+                }
+            }
+        }
+       
+    }
+    &_img {
+        margin-top: 35px;
+        figure {
+            --bs-aspect-ratio: 121%;
+        }
+    }
+   
+   
+}
+.methodology{
+    .btn_wrap{
+        margin-top: size(20);
+    }
+}

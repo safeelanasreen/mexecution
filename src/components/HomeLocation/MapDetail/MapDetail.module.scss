@@ -1,0 +1,269 @@
+@import "../../../styles/util";
+
+.detail_wrap {
+  @include max(1199.98) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  width: 100%;
+  border-radius: 23px;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 111;
+  top: calc(100% + 13px);
+  padding: 26px 24px;
+  margin-top: 17px;
+  margin-bottom: 38px;
+
+  .scroll_sec {
+    margin-bottom: 20px;
+    position: relative;
+
+    @include min(1200) {
+      max-height: 180px;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-bottom: size(44);
+
+      &::-webkit-scrollbar {
+        width: 5px !important;
+        // display: none;
+        cursor: grab;
+      }
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 40px;
+        left: 0;
+        bottom: 0;
+        position: sticky;
+        z-index: 10;
+        display: block;
+        background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 100%);
+        pointer-events: none;
+      }
+
+    }
+
+    @include min(1400) {
+      max-height: 200px;
+    }
+
+    @include min(1600) {
+      max-height: 300px;
+    }
+  }
+
+  @include min(1200) {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: 0.5s all $ease;
+  }
+
+  .ripple {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 200%;
+      border-radius: 50%;
+      // visibility: hidden;
+      z-index: 2;
+    }
+
+  }
+
+
+  &.anim {
+    transition: 1s all;
+    opacity: 1;
+    transform: initial;
+
+    // Ripple
+    .ripple {
+      // &::before {
+      //   visibility: visible;
+      //   z-index: -1;
+      //   // animation: ripple 1s cubic-bezier(0.27, 0.31, 0.03, 1) forwards;
+      //   // transition: .3s visibility .1s;
+      //   top: -50%;
+      //   left: -30%;
+      //   width: 150%;
+      //   background-color: rgb(255, 255, 255);
+
+      //   // width: 100%;
+      //   // height: 100%;
+      // }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        bottom: -1px;
+        left: 0;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        border-radius: 100%;
+        border-block: 1px solid $primary;
+        background-color: #e8be4d;
+        // background-color: $primary;
+        opacity: 0;
+
+        @include lg {
+          animation: ripple .8s .1s linear forwards;
+        }
+
+        @keyframes ripple {
+          0% {
+            transform: translate(-50%, -50%) scale(0);
+            transform-origin: center;
+            opacity: .8;
+          }
+
+          50% {
+            transform: translate(-50%, -50%) scale(12);
+            opacity: 0;
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+  @include min(1200) {
+    padding: size(45) size(37);
+    margin-bottom: 0;
+    position: absolute;
+  }
+
+  h6 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 12px;
+
+    @include min(1200) {
+      margin-bottom: size(22);
+    }
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 18px;
+    color: $text-dark;
+
+    @include min(1200) {
+      font-weight: 600;
+      font-size: size(24);
+    }
+  }
+
+  p {
+    @include lineHeight(16, 27);
+    font-size: 14px;
+
+    @include min(1200) {
+      font-size: size(16);
+    }
+  }
+
+  :global {
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      background-color: $secondary;
+      border-color: $secondary;
+      color: hsl(0, 0%, 0%);
+
+      @include min(768) {
+        max-width: 50%;
+        margin: 0 auto;
+      }
+
+      @include min(1200) {
+        max-width: 100%;
+        z-index: 5;
+      }
+
+      &:hover {
+        // opacity: ;
+        background-color: #f1d018;
+        background-color: $primary;
+        border-color: $primary;
+        color: hsl(0, 0%, 100%);
+      }
+
+    }
+  }
+}
+
+.title {
+  margin-bottom: 13px;
+
+  @include min(1200) {
+    margin-bottom: 16px;
+  }
+}
+
+.stat {
+  --bs-gutter-x: 20px;
+
+  &_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+
+    h4 {
+      font-weight: 500;
+      font-size: 25px;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin-bottom: 0;
+
+      @include min(1200) {
+        font-size: size(32);
+      }
+    }
+
+    p {
+      @include lineHeight(16, 23);
+      font-size: 12px;
+      opacity: 0.6;
+      margin-bottom: 0;
+      padding-left: 14px;
+
+      @include min(1200) {
+        padding-left: 20px;
+        font-size: size(14);
+      }
+    }
+  }
+}
+
+.brand_item {
+  position: relative;
+  height: 70px;
+
+  img {
+    filter: grayscale(1);
+    object-fit: contain;
+  }
+}
+
+.companies {
+  margin-bottom: 0;
+
+  :global {
+    .nav-arrow {
+      display: none;
+    }
+  }
+}

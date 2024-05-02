@@ -1,0 +1,114 @@
+@import "../../styles/util";
+.industries {
+    padding: 50px 0;
+    background-color: #f4f8f8;
+    @include min(768) {
+        padding: size(70) 0;
+    }
+    @include min(1200) {
+        padding: size(110) 0;
+    }
+    &_desc {
+        text-align: center;
+        max-width: 98%;
+        margin: 0 auto;
+        margin-bottom: 35px;
+        @include min(1200) {
+            max-width: 74%;
+            margin-bottom: size(60);
+        }
+    }
+    :global {
+        .nav-tabs {
+            column-gap: 15px;
+            margin-bottom: 38px;
+            --bs-nav-tabs-border-width: 0;
+            width: calc( 100% + 16px);
+            @include min(768) {
+                column-gap: size(40);
+                justify-content: center;
+
+            }
+            @include min(1200) {
+                margin-bottom: size(85);
+                column-gap: size(50);
+            }
+            @include max(767.98) {
+                overflow-x: auto;
+            }
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+            }
+        }
+        .nav-link {
+            padding:  10px 25px;
+            --bs-nav-tabs-link-active-bg: transparent;
+            --bs-nav-tabs-border-width: 0;
+            box-shadow: none !important;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            @include max(767.98) {
+                background-color: transparent;
+                border-radius: 28px;
+                color: #ffffff;
+                --bs-nav-tabs-link-active-bg: #107864;
+                --bs-nav-tabs-link-active-color:#ffffff;
+              
+                border: 1px solid #cccccc;
+                color:#000000;
+
+
+
+            }
+            @include min(768) {
+                padding: 0;
+               
+            }
+            &.active {
+                .img-circle {
+                    .img-wrap {
+                        figure {
+                            border: 2px solid #fed800;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &_bottom {
+        column-gap: size(50);
+        justify-content: center;
+        margin-bottom: size(85);
+    }
+
+    .other_industries {
+        padding-top: size(50);
+        .industrycard_wrap {
+            @include max(991.98) {
+                overflow-x: auto;
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+        }
+        &_ttl {
+            margin-bottom: 16px;
+            @include min(992) {
+                margin-bottom: size(30);
+            }
+            .ttl {
+                font-size: 18px;
+                @include min(992) {
+                    font-size: size(24);
+                }
+            }
+        }
+        .industry_card_item {
+            @include max(991.98) {
+                max-width: 80%;
+            }
+        }
+    }
+}

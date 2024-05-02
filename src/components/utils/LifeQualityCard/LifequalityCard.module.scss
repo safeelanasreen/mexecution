@@ -1,0 +1,111 @@
+@import "../../../styles/util";
+.accordioncard {
+    // display: flex;
+    // flex-direction: column;
+    // height: 100%;
+    .figure_wrap {
+        figure {
+            overflow: hidden;
+            border-radius: 8px;
+            --bs-aspect-ratio: 50.8%;
+            margin-bottom: 12px;
+            margin-bottom: 20px;
+            @include min(1200){
+                margin-bottom: 16px;
+            }
+        }
+    }
+    .text_wrap {
+        max-width: 95%;
+        .ttl {
+            font-size:20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            @include min(992){
+                font-size: size(18);
+    
+            }
+        }
+        .desc {
+            @include min(992){
+                min-height: 160px;
+            }
+            margin-bottom: 16px;
+            @include min(992){
+                margin-bottom: size(55);
+
+            }
+        }
+    }
+    .accordion_wrap {
+        // margin-top: auto;
+        :global {
+            .accordion{
+                --bs-accordion-bg:#f4f8f8;
+                --bs-accordion-color:#000000;
+                --bs-accordion-border-width:0;
+                --bs-accordion-border-radius:0;
+                    --bs-accordion-inner-border-radius:0;
+                    --bs-accordion-active-bg:#107864;
+                    --bs-accordion-body-padding-x:33px;
+                    --bs-accordion-body-padding-y:37px;
+                    @include max(991.98){
+                        row-gap: 14px;
+                        --bs-accordion-body-padding-x:18px;
+                    --bs-accordion-body-padding-y:26px;
+                    }
+                    
+                // --bs-border-radius:8px;
+                
+                display: flex;
+                flex-direction: column;
+                row-gap: size(26);
+            }
+            .accordion-button {
+                font-weight: 500;
+                font-size: 14px;
+                --bs-accordion-btn-padding-x:18px;
+                --bs-accordion-btn-padding-y:15px;
+                align-items: center;
+                @include min(992){
+                    --bs-accordion-btn-padding-y:26px;
+                    --bs-accordion-btn-padding-x:33px;
+                    font-size: 16px;
+
+                }
+                
+                
+
+
+                
+                &:after{
+                    --bs-accordion-btn-icon-width:20px;
+                    height:20px;
+                    background-image: url(../../../../public/images/state-page/icons/plus.svg);
+                }
+                &:not(.collapsed)::after {
+                    height: 2px;
+                    background-image: url(../../../../public/images/state-page/icons/minus.svg);
+                }
+                &:focus{
+                    --bs-accordion-btn-focus-box-shadow:none;
+                }
+            }
+            .accordion-body{
+               
+                background-color: #107864;
+                
+                color: #ffffff;
+             padding-top: 0px;
+                
+            }
+            .accordion-item{
+                overflow: hidden;
+                border-radius: 8px;
+            }
+            .accordion-button:not(.collapsed){
+                color: #ffffff;
+            }
+        }
+    }
+}
